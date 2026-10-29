@@ -1,6 +1,8 @@
 .spotlight {
     width: 100%;
     margin-top: 60px;
+    padding-bottom: 30px;
+    background: linear-gradient(180deg, rgba(225, 234, 232, 0.01) -7.63%, #e1eae8 56.71%);
 
     &__inner {
         display: flex;

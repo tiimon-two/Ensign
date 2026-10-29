@@ -4,6 +4,7 @@
 @import 'footer';
 @import 'hero-slider';
 @import 'spotlight';
+@import 'hobbies';
 
 :root {
     --text-linesb-100: rgba(0, 0, 0, 1);
@@ -20,6 +21,9 @@
     --yellow-leaves: #ffc507;
     --summer-grass: #008e1c;
     --dark-green: #0d483b;
+    --gray: #e1eae8;
+    --blue: #1eb9cb;
+    --purple: #b18ff8;
     --font-family: "PT Root UI", Helvetica;
     --font-weight-500: 500;
     --font-size-16: 16px;

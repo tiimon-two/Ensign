@@ -1,21 +1,21 @@
-.slick {
-    &-track {
-        height: 740px;
-    }
-
-    &-slide {
-        position: relative;
-        height: 740px;
-        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1680 740'%3E%3Cpath d='M1680 740L1679.75 0L419.925 0C348.619 0 288.93 50.7294 273.73 118.615C264.109 161.585 277.992 177.26 292.575 199.477L329.835 245.27C329.835 160.845 262.608 92.465 179.809 92.465H0L0 620C0 686.274 53.7258 740 120 740H1680Z' fill='white'/%3E%3C/svg%3E");
-        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1680 740'%3E%3Cpath d='M1680 740L1679.75 0L419.925 0C348.619 0 288.93 50.7294 273.73 118.615C264.109 161.585 277.992 177.26 292.575 199.477L329.835 245.27C329.835 160.845 262.608 92.465 179.809 92.465H0L0 620C0 686.274 53.7258 740 120 740H1680Z' fill='white'/%3E%3C/svg%3E");
-        -webkit-mask-size: contain;
-        mask-size: contain;
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-    }
-}
 
 .hero-slider {
+    .slick {
+        &-track {
+            height: 740px;
+        }
+
+        &-slide {
+            position: relative;
+            height: 740px;
+            -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1680 740'%3E%3Cpath d='M1680 740L1679.75 0L419.925 0C348.619 0 288.93 50.7294 273.73 118.615C264.109 161.585 277.992 177.26 292.575 199.477L329.835 245.27C329.835 160.845 262.608 92.465 179.809 92.465H0L0 620C0 686.274 53.7258 740 120 740H1680Z' fill='white'/%3E%3C/svg%3E");
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1680 740'%3E%3Cpath d='M1680 740L1679.75 0L419.925 0C348.619 0 288.93 50.7294 273.73 118.615C264.109 161.585 277.992 177.26 292.575 199.477L329.835 245.27C329.835 160.845 262.608 92.465 179.809 92.465H0L0 620C0 686.274 53.7258 740 120 740H1680Z' fill='white'/%3E%3C/svg%3E");
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+        }
+    }
     position: relative;
     width: 100%;
     margin-bottom: var(--margin-l);

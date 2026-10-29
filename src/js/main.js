@@ -77,3 +77,16 @@ $(document).on('ended', '.hero-slider__video', function() {
         $('.hero-slider__track').slick('slickNext');
     }
 });
+
+$('.hobbies__slider').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: true,
+    prevArrow: $('.hobbies__arrow--prev'),
+    nextArrow: $('.hobbies__arrow--next'),
+    dots: false,
+    infinite: false,
+    autoplay: false,
+    speed: 600,
+    cssEase: 'linear'
+});
