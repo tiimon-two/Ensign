@@ -1,0 +1,300 @@
+.spotlight {
+    width: 100%;
+    margin-top: 60px;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    // ---------- Шапка ----------
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        width: 100%;
+    }
+
+    &__title {
+        margin: 0;
+        font-family: var(--font-family);
+        font-weight: var(--font-weight-500);
+        font-style: var(--font-style);
+        font-size: var(--font-size-72);
+        line-height: var(--line-height-114);
+        letter-spacing: var(--letter-spacing-0);
+        color: var(--text-linesb-100);
+    }
+
+    &__description {
+        margin: 0;
+        max-width: 710px;
+        text-align: right;
+        opacity: 0.6;
+        font-family: var(--font-family);
+        font-size: var(--font-size-24);
+        line-height: var(--line-height-117);
+        letter-spacing: var(--letter-spacing-0);
+        color: var(--text-linesb-100);
+    }
+
+    // ---------- Горизонтальная лента ----------
+    &__list {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &:focus-visible {
+            outline: 3px solid var(--basicinteractive);
+            outline-offset: 6px;
+        }
+    }
+
+    &__item {
+        position: relative;
+        flex: 0 0 544px;
+        width: 544px;
+        height: 680px;
+        scroll-snap-align: center;
+
+        // Структурная альтернация: сдвиг влево + другой угол
+        &:nth-child(even) {
+            margin-left: -48px;
+
+            .spotlight__card {
+                --rotation: 4deg;
+            }
+
+            .spotlight__pattern {
+                width: 2179px;
+                height: 2177px;
+            }
+        }
+    }
+
+    // ---------- Карточка ----------
+    &__card {
+        --rotation: -8deg;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 544px;
+        height: 680px;
+        padding: 20px;
+        overflow: hidden;
+        transform: rotate(var(--rotation));
+
+        &--news {
+            background-color: var(--seasonal-colorssummerblue-sky);
+        }
+
+        &--afisha {
+            background-color: var(--seasonal-colorsspringpurple-flowers);
+        }
+
+        &--journal {
+            background-color: var(--basicinteractive);
+        }
+
+        &--infrastructure {
+            background-color: var(--seasonal-colorssummerorange-orange);
+        }
+
+        &--podcasts {
+            background-color: var(--seasonal-colorsautumnyellow-leaves);
+
+            .spotlight__tag,
+            .spotlight__card-title {
+                color: var(--basicinteractive);
+            }
+        }
+
+        &--gallery {
+            background-color: var(--seasonal-colorssummersummer-grass);
+        }
+
+        &--vacation {
+            align-items: center;
+            justify-content: center;
+            background-color: var(--basicinteractive);
+        }
+    }
+
+    // ---------- Паттерн (декоративный фон) ----------
+    &__pattern {
+        position: absolute;
+        width: 2306px;
+        height: 2304px;
+        transform: rotate(calc(-1 * var(--rotation)));
+        pointer-events: none;
+
+        &--news {
+            top: calc(50% - 1404px);
+            left: calc(50% - 1503px);
+        }
+
+        &--afisha {
+            top: calc(50% - 1333px);
+            left: calc(50% - 532px);
+        }
+
+        &--journal {
+            top: calc(50% - 1364px);
+            left: calc(50% - 815px);
+        }
+
+        &--infrastructure {
+            top: calc(50% - 981px);
+            left: calc(50% - 777px);
+        }
+
+        &--podcasts {
+            top: calc(50% - 1094px);
+            left: calc(50% - 504px);
+        }
+
+        &--gallery {
+            top: calc(50% - 1431px);
+            left: calc(50% - 751px);
+        }
+
+        &--vacation {
+            top: calc(50% - 1044px);
+            left: calc(50% - 450px);
+        }
+    }
+
+    // ---------- Тег ----------
+    &__tag {
+        position: relative;
+        align-self: flex-start;
+        text-transform: uppercase;
+        font-family: var(--button-18-button-font-family);
+        font-weight: var(--button-18-button-font-weight);
+        font-style: var(--button-18-button-font-style);
+        font-size: var(--button-18-button-font-size);
+        line-height: var(--button-18-button-line-height);
+        letter-spacing: var(--button-18-button-letter-spacing);
+        color: var(--text-linesb-0);
+    }
+
+    // ---------- Медиа ----------
+    &__media {
+        position: relative;
+        flex: 0 0 auto;
+        width: 100%;
+        height: 480px;
+        overflow: hidden;
+
+        &--vector {
+            align-self: center;
+            width: 374px;
+            height: 225px;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        transform: rotate(calc(-1 * var(--rotation)));
+        object-fit: cover;
+
+        &--wide {
+            top: -48px;
+            left: calc(50% - 390px);
+            width: 780px;
+            height: 576px;
+        }
+
+        &--medium {
+            top: -25px;
+            left: calc(50% - 376px);
+            width: 752px;
+            height: 529px;
+        }
+
+        &--tall {
+            top: -56px;
+            left: calc(50% - 448px);
+            width: 898px;
+            height: 592px;
+        }
+
+        &--compact {
+            top: -24px;
+            left: calc(50% - 371px);
+            width: 741px;
+            height: 528px;
+        }
+    }
+
+    // ---------- Векторная композиция (карточка «отпуск») ----------
+    &__vector {
+        position: absolute;
+        transform: rotate(calc(-1 * var(--rotation)));
+
+        &--1 { width: 22.15%; height: 43.43%; top: 56.57%; left: 77.85%; }
+        &--2 { width: 102.37%; height: 108.5%; top: -8.5%; left: -2.37%; }
+        &--3 { width: 25.79%; height: 102.33%; top: -2.33%; left: 74.21%; }
+        &--4 { width: 22.93%; height: 69.29%; top: 30.71%; left: 77.07%; }
+        &--5 { width: 74.69%; height: 67.79%; top: 32.21%; left: 25.31%; }
+    }
+
+    // ---------- Заголовок карточки + растянутая ссылка ----------
+    &__card-title {
+        position: relative;
+        margin: 0;
+        font-family: var(--head-24-head-font-family);
+        font-weight: var(--head-24-head-font-weight);
+        font-style: var(--head-24-head-font-style);
+        font-size: var(--head-24-head-font-size);
+        line-height: var(--head-24-head-line-height);
+        letter-spacing: var(--head-24-head-letter-spacing);
+        color: var(--text-linesb-0);
+
+        &--center {
+            text-align: center;
+        }
+    }
+
+    &__card-link {
+        color: inherit;
+        text-decoration: none;
+
+        // Растягиваем клик на всю карточку
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        &:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        &:focus-visible {
+            outline: none;
+
+            &::after {
+                outline: 2px solid currentColor;
+                outline-offset: 4px;
+                border-radius: 4px;
+            }
+        }
+    }
+}

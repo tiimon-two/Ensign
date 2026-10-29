@@ -2,6 +2,8 @@
 @import 'nav';
 @import 'media';
 @import 'footer';
+@import 'hero-slider';
+@import 'spotlight';
 
 :root {
     --text-linesb-100: rgba(0, 0, 0, 1);
@@ -24,6 +26,13 @@
     --font-size-18: 18px;
     --font-size-14: 14px;
     --line-height-129: 129px;
+    --font-size-88: 88px;
+    --line-height-93: 93%;
+    --font-size-24: 24px;
+    --line-height-117: 117%;
+    --margin-l: 60px;
+    --font-size-72: 72px;
+    --line-height-114: 114%;
 }
 
 @font-face {
