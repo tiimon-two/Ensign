@@ -2,22 +2,26 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 4px;
     width: 100%;
     padding: 4px;
     border-radius: 24px;
 
+    &__container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
     &__top {
         position: relative;
-        z-index: 2;
+        width: 100%;
         display: flex;
         align-items: center;
         gap: 24px;
-        width: 100%;
-        max-width: 1720px;
-        padding-left: 24px;
+        padding: 12px 0 12px 10px;
         border-bottom: 1px solid #e1eae8;
+        z-index: 2;
     }
 
     &__icon-button {
@@ -128,11 +132,9 @@
     z-index: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 24px;
     width: 100%;
-    max-width: 1720px;
-    padding: 12px 0 12px 24px;
+    padding: 12px 0;
 }
 
     &__logo {

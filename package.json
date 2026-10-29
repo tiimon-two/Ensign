@@ -12,5 +12,8 @@
     "sass-embedded": "^1.107.0",
     "vite": "^8.3.5",
     "vite-plugin-html-inject": "^1.1.2"
+  },
+  "dependencies": {
+    "slick-carousel": "^2.0.0"
   }
 }
