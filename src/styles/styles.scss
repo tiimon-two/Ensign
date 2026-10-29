@@ -14,6 +14,12 @@
     --transparentgray-15: rgba(0, 14, 51, 0.15);
     --seasonal-colorswintercappuccino: rgba(246, 211, 145, 1);
     --backgroundblack: #000000;
+    --blue-sky: #C0F8FF;
+    --purple-flowers: #9747FF;
+    --summer-orange: #ff871c;
+    --yellow-leaves: #ffc507;
+    --summer-grass: #008e1c;
+    --dark-green: #0d483b;
     --font-family: "PT Root UI", Helvetica;
     --font-weight-500: 500;
     --font-size-16: 16px;
@@ -33,11 +39,16 @@
     --margin-l: 60px;
     --font-size-72: 72px;
     --line-height-114: 114%;
+    --line-height-122: 122%;
 }
 
 @font-face {
     font-family: "PT Root UI";
     src: local("PT Root UI");
+}
+
+body {
+    font-family: var(--font-family);
 }
 
 .container {

@@ -8,7 +8,6 @@
         gap: 60px;
     }
 
-    // ---------- Шапка ----------
     &__header {
         display: flex;
         align-items: center;
@@ -40,7 +39,6 @@
         color: var(--text-linesb-100);
     }
 
-    // ---------- Горизонтальная лента ----------
     &__list {
         display: flex;
         align-items: flex-start;
@@ -70,7 +68,6 @@
         height: 680px;
         scroll-snap-align: center;
 
-        // Структурная альтернация: сдвиг влево + другой угол
         &:nth-child(even) {
             margin-left: -48px;
 
@@ -85,7 +82,6 @@
         }
     }
 
-    // ---------- Карточка ----------
     &__card {
         --rotation: -8deg;
         position: relative;
@@ -99,11 +95,11 @@
         transform: rotate(var(--rotation));
 
         &--news {
-            background-color: var(--seasonal-colorssummerblue-sky);
+            background-color: var(--blue-sky);
         }
 
         &--afisha {
-            background-color: var(--seasonal-colorsspringpurple-flowers);
+            background-color: var(--purple-flowers);
         }
 
         &--journal {
@@ -111,11 +107,11 @@
         }
 
         &--infrastructure {
-            background-color: var(--seasonal-colorssummerorange-orange);
+            background-color: var(--summer-orange);
         }
 
         &--podcasts {
-            background-color: var(--seasonal-colorsautumnyellow-leaves);
+            background-color: var(--yellow-leaves);
 
             .spotlight__tag,
             .spotlight__card-title {
@@ -124,17 +120,16 @@
         }
 
         &--gallery {
-            background-color: var(--seasonal-colorssummersummer-grass);
+            background-color: var(--summer-grass);
         }
 
         &--vacation {
             align-items: center;
             justify-content: center;
-            background-color: var(--basicinteractive);
+            background-color: var(--dark-green);
         }
     }
 
-    // ---------- Паттерн (декоративный фон) ----------
     &__pattern {
         position: absolute;
         width: 2306px;
@@ -178,21 +173,17 @@
         }
     }
 
-    // ---------- Тег ----------
     &__tag {
         position: relative;
         align-self: flex-start;
         text-transform: uppercase;
-        font-family: var(--button-18-button-font-family);
-        font-weight: var(--button-18-button-font-weight);
-        font-style: var(--button-18-button-font-style);
-        font-size: var(--button-18-button-font-size);
-        line-height: var(--button-18-button-line-height);
-        letter-spacing: var(--button-18-button-letter-spacing);
+        font-weight: var(--font-weight-500);
+        font-size: var(--font-size-18);
+        line-height: var(--line-height-122);
+        letter-spacing: var(--letter-spacing-0);
         color: var(--text-linesb-0);
     }
 
-    // ---------- Медиа ----------
     &__media {
         position: relative;
         flex: 0 0 auto;
@@ -241,7 +232,6 @@
         }
     }
 
-    // ---------- Векторная композиция (карточка «отпуск») ----------
     &__vector {
         position: absolute;
         transform: rotate(calc(-1 * var(--rotation)));
@@ -253,7 +243,6 @@
         &--5 { width: 74.69%; height: 67.79%; top: 32.21%; left: 25.31%; }
     }
 
-    // ---------- Заголовок карточки + растянутая ссылка ----------
     &__card-title {
         position: relative;
         margin: 0;
@@ -274,7 +263,6 @@
         color: inherit;
         text-decoration: none;
 
-        // Растягиваем клик на всю карточку
         &::after {
             content: '';
             position: absolute;
