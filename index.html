@@ -3,14 +3,185 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
         <link rel="stylesheet" href="src/styles/styles.scss">
         <title>Парки Москвы</title>
     </head>
     <body>
         <load src="src/html/header.html" />
         <main>
+            <section class="hero-slider">
+                <div class="container">
+                    <div class="hero-slider__container">
+                        <div class="hero-slider__track">
+                            <!-- Слайд 1 -->
+                            <div class="hero-slider__slide">
+                                <video class="hero-slider__video" poster="/src/assets/video-poster.svg" muted playsinline></video>
+                                <div class="hero-slider__content">
+                                    <h2 class="hero-slider__title">Новая городская привычка</h2>
+                                    <p class="hero-slider__text">Вместе создаем пространства для жизни, вдохновения и общения</p>
+                                    <a class="hero-slider__link" href="/events">Открыть осеннюю афишу</a>
+                                </div>
+                                <!-- Прогресс-бар видео -->
+                                <div class="hero-slider__progress">
+                                    <div class="hero-slider__progress-bar"></div>
+                                </div>
+                            </div>
+                            <!-- Слайд 2 и последующие... -->
+                         <div class="hero-slider__slide">
+                                <video class="hero-slider__video" poster="/src/assets/video-poster.svg" muted playsinline></video>
+                                <div class="hero-slider__content">
+                                    <h2 class="hero-slider__title">Новая городская привычка 2</h2>
+                                    <p class="hero-slider__text">Вместе создаем пространства для жизни, вдохновения и общения</p>
+                                    <a class="hero-slider__link" href="/events">Открыть осеннюю афишу</a>
+                                </div>
+                                <!-- Прогресс-бар видео -->
+                                <div class="hero-slider__progress">
+                                    <div class="hero-slider__progress-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Кастомные элементы управления (вне .hero-slider__track) -->
+                        <div class="hero-slider__controls">
+                            <div class="hero-slider__counter">
+                                <span class="hero-slider__current">01</span>
+                                -
+                                <span class="hero-slider__total">02</span>
+                            </div>
+                            <div class="hero-slider__arrows">
+                                <button class="hero-slider__arrow hero-slider__arrow--prev" type="button" aria-label="Предыдущий слайд"></button>
+                                <button class="hero-slider__arrow hero-slider__arrow--next" type="button" aria-label="Следующий слайд"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             <section class="spotlight">
+                <div class="container">
+                    <div class="spotlight__inner">
+                        <header class="spotlight__header">
+                            <h2 class="spotlight__title">В центре внимания</h2>
+                            <p class="spotlight__description">
+                                Свежие новости, яркие события и идеи для прогулок.
+                                Узнавайте, чем живут парки Москвы, и планируйте свой отдых.
+                            </p>
+                        </header>
 
+                        <ul class="spotlight__list">
+                            <li class="spotlight__item">
+                                <article class="spotlight__card spotlight__card--news">
+                                    <img class="spotlight__pattern spotlight__pattern--news" src="img/pattern-01-5.svg" alt="" aria-hidden="true">
+                                    <span class="spotlight__tag">Новости</span>
+                                    <div class="spotlight__media">
+                                        <img class="spotlight__image spotlight__image--wide" src="img/image-8.png" alt="Пейзаж парка с прогулочной зоной, мостом и зелёным газоном">
+                                    </div>
+                                    <h3 class="spotlight__card-title">
+                                        <a class="spotlight__card-link" href="/news/new-playgrounds">
+                                            В парках Москвы появились новые площадки для отдыха и активного досуга
+                                        </a>
+                                    </h3>
+                                </article>
+                            </li>
+
+                            <li class="spotlight__item">
+                                <article class="spotlight__card spotlight__card--afisha">
+                                    <img class="spotlight__pattern spotlight__pattern--afisha" src="img/pattern-01-2.svg" alt="" aria-hidden="true">
+                                    <span class="spotlight__tag">Афиша</span>
+                                    <div class="spotlight__media">
+                                        <img class="spotlight__image spotlight__image--medium" src="img/image-2090015413.png" alt="Осенний парк с беседкой, дорожкой и опавшими листьями">
+                                    </div>
+                                    <h3 class="spotlight__card-title">
+                                        <a class="spotlight__card-link" href="/afisha/golden-autumn">
+                                            Золотая осень: выходные в парках Москвы
+                                        </a>
+                                    </h3>
+                                </article>
+                            </li>
+
+                            <li class="spotlight__item">
+                                <article class="spotlight__card spotlight__card--journal">
+                                    <img class="spotlight__pattern spotlight__pattern--journal" src="img/pattern-01.svg" alt="" aria-hidden="true">
+                                    <span class="spotlight__tag">Онлайн журнал</span>
+                                    <div class="spotlight__media">
+                                        <img class="spotlight__image spotlight__image--tall" src="img/IMG-18-1.png" alt="Два человека под зонтом среди зелени парка">
+                                    </div>
+                                    <h3 class="spotlight__card-title">
+                                        <a class="spotlight__card-link" href="/journal/autumn-season">
+                                            Осень в парках: новый сезон для прогулок и вдохновения
+                                        </a>
+                                    </h3>
+                                </article>
+                            </li>
+
+                            <li class="spotlight__item">
+                                <article class="spotlight__card spotlight__card--infrastructure">
+                                    <img class="spotlight__pattern spotlight__pattern--infrastructure" src="img/image.svg" alt="" aria-hidden="true">
+                                    <span class="spotlight__tag">Инфраструктура</span>
+                                    <div class="spotlight__media">
+                                        <img class="spotlight__image spotlight__image--compact" src="img/image-2090015416.png" alt="Информационный павильон «Лесная точка» в парке">
+                                    </div>
+                                    <h3 class="spotlight__card-title">
+                                        <a class="spotlight__card-link" href="/infrastructure/forest-point">
+                                            Информационный павильон «Лесная точка»
+                                        </a>
+                                    </h3>
+                                </article>
+                            </li>
+
+                            <li class="spotlight__item">
+                                <article class="spotlight__card spotlight__card--podcasts">
+                                    <img class="spotlight__pattern spotlight__pattern--podcasts" src="img/pattern-01-4.svg" alt="" aria-hidden="true">
+                                    <span class="spotlight__tag">Подкасты</span>
+                                    <div class="spotlight__media">
+                                        <img class="spotlight__image spotlight__image--wide" src="img/image-2090015418.png" alt="Природа парка с деревьями и прогулочной зоной">
+                                    </div>
+                                    <h3 class="spotlight__card-title">
+                                        <a class="spotlight__card-link" href="/podcasts/park-sounds">
+                                            «Парк звучит»: истории природы и людей
+                                        </a>
+                                    </h3>
+                                </article>
+                            </li>
+
+                            <li class="spotlight__item">
+                                <article class="spotlight__card spotlight__card--gallery">
+                                    <img class="spotlight__pattern spotlight__pattern--gallery" src="img/pattern-01-6.svg" alt="" aria-hidden="true">
+                                    <span class="spotlight__tag">Галерея</span>
+                                    <div class="spotlight__media">
+                                        <img class="spotlight__image spotlight__image--medium" src="img/image-2090015417.png" alt="Цветущий парк Москвы летом">
+                                    </div>
+                                    <h3 class="spotlight__card-title">
+                                        <a class="spotlight__card-link" href="/gallery/blooming-moscow">
+                                            Цветущая Москва: парки в июне
+                                        </a>
+                                    </h3>
+                                </article>
+                            </li>
+
+                            <li class="spotlight__item">
+                                <article class="spotlight__card spotlight__card--vacation">
+                                    <img class="spotlight__pattern spotlight__pattern--vacation" src="img/pattern-01-3.svg" alt="" aria-hidden="true">
+                                    <div class="spotlight__media spotlight__media--vector" aria-hidden="true">
+                                        <img class="spotlight__vector spotlight__vector--1" src="img/vector-3.svg" alt="">
+                                        <img class="spotlight__vector spotlight__vector--2" src="img/vector.svg" alt="">
+                                        <img class="spotlight__vector spotlight__vector--3" src="img/vector-2.svg" alt="">
+                                        <img class="spotlight__vector spotlight__vector--4" src="img/vector-5.svg" alt="">
+                                        <img class="spotlight__vector spotlight__vector--5" src="img/vector-4.svg" alt="">
+                                    </div>
+                                    <h3 class="spotlight__card-title spotlight__card-title--center">
+                                        Ждём вас в парке ;)
+                                    </h3>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </main>
         <load src="src/html/footer.html" />
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+        <script src="src/js/main.js"></script>
     </body>
 </html>
