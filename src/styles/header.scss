@@ -87,12 +87,12 @@
     }
 
     &__tool-label {
-        font-family: var(--head-16-head-font-family);
-        font-weight: var(--head-16-head-font-weight);
-        font-style: var(--head-16-head-font-style);
-        font-size: var(--head-16-head-font-size);
-        line-height: var(--head-16-head-line-height);
-        letter-spacing: var(--head-16-head-letter-spacing);
+        font-family: var(--font-family);
+        font-weight: var(--font-weight-500);
+        font-style: var(--font-style);
+        font-size: var(--font-size-16);
+        line-height: var(--line-height-120);
+        letter-spacing: var(--letter-spacing-0);
         color: #727874;
         white-space: nowrap;
     }

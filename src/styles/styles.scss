@@ -6,22 +6,24 @@
 :root {
     --text-linesb-100: rgba(0, 0, 0, 1);
     --basicinteractive: rgba(13, 72, 59, 1);
+    --basic-light: rgba(13, 72, 59, 0.8);
     --transparentgray-30: rgba(0, 14, 51, 0.3);
     --text-linesb-0: rgba(255, 255, 255, 1);
     --transparentgray-15: rgba(0, 14, 51, 0.15);
     --seasonal-colorswintercappuccino: rgba(246, 211, 145, 1);
-    --head-16-head-font-family: "PT Root UI", Helvetica;
-    --head-16-head-font-weight: 500;
-    --head-16-head-font-size: 16px;
-    --head-16-head-letter-spacing: 0px;
-    --head-16-head-line-height: 22px;
-    --head-16-head-font-style: normal;
-    --button-18-button-font-family: "PT Root UI", Helvetica;
-    --button-18-button-font-weight: 500;
-    --button-18-button-font-size: 18px;
-    --button-18-button-letter-spacing: 0px;
-    --button-18-button-line-height: 22px;
-    --button-18-button-font-style: normal;
+    --backgroundblack: #000000;
+    --font-family: "PT Root UI", Helvetica;
+    --font-weight-500: 500;
+    --font-size-16: 16px;
+    --letter-spacing-0: 0px;
+    --line-height-22: 22px;
+    --font-style: normal;
+    --font-size-20: 20px;
+    --line-height-120: 120%;
+    --font-weight-500: 500;
+    --font-size-18: 18px;
+    --font-size-14: 14px;
+    --line-height-129: 129px;
 }
 
 @font-face {
@@ -30,6 +32,7 @@
 }
 
 .container {
+    max-width: 1680px;
     margin: 0 auto;
     padding: 0 120px;
 }

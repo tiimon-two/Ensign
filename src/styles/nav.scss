@@ -50,12 +50,12 @@
         align-items: center;
         justify-content: center;
         padding-bottom: 2px;
-        font-family: var(--button-18-button-font-family);
-        font-weight: var(--button-18-button-font-weight);
-        font-style: var(--button-18-button-font-style);
-        font-size: var(--button-18-button-font-size);
-        line-height: var(--button-18-button-line-height);
-        letter-spacing: var(--button-18-button-letter-spacing);
+        font-family: var(--font-family);
+        font-weight: var(--font-weight-500);
+        font-style: var(--font-style);
+        font-size: var(--font-size-18);
+        line-height: var(--line-height-120);
+        letter-spacing: var(--letter-spacing-0);
         color: var(--text-linesb-100);
         white-space: nowrap;
     }
