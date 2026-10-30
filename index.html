@@ -243,6 +243,74 @@
                     </div>
                 </div>
             </section>
+            <section class="afisha" aria-labelledby="afisha-title">
+                <div class="container">
+                    <div class="afisha__inner">
+                        <header class="afisha__header">
+                            <h1 class="afisha__title" id="afisha-title">Афиша</h1>
+
+                            <div class="afisha__filters">
+                                <label class="afisha__select-wrapper">
+                                    <span class="visually-hidden">Выбор парка</span>
+                                    <select class="afisha__select" id="afisha-park-filter">
+                                        <option value="">Все парки Москвы</option>
+                                        <option value="gorky">Парк Горького</option>
+                                        <option value="pokrovsky">Зона отдыха «Покровский берег»</option>
+                                        <option value="tushino">Парк «Северное Тушино»</option>
+                                        <option value="lianozovo">Лианозовский парк</option>
+                                        <option value="luzhniki">Парк им. Юрия Лужкова</option>
+                                        <option value="korobkovsky">Коробковский сад</option>
+                                    </select>
+                                </label>
+
+                                <a class="afisha__all-link" href="/afisha/all">
+                                    <span>Смотреть все</span>
+                                    <svg class="afisha__all-icon" aria-hidden="true">…</svg>
+                                </a>
+                            </div>
+                        </header>
+
+                        <section class="afisha__dates" aria-label="Выбор даты">
+                            <h2 class="afisha__month">Октябрь</h2>
+                            <ul class="afisha__dates-list">
+                                <li>
+                                    <button class="afisha__date" type="button" data-date="2024-10-11" aria-pressed="false">
+                                        <span class="afisha__date-day">11</span>
+                                        <span class="afisha__date-weekday">Пн</span>
+                                    </button>
+                                </li>
+                                <!-- … остальные даты … -->
+                                <li>
+                                    <button class="afisha__date afisha__date--next" type="button" aria-label="Следующие даты">
+                                        <svg aria-hidden="true">…</svg>
+                                    </button>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <nav class="afisha__tags" aria-label="Категории событий">
+                            <ul class="afisha__tags-list">
+                                <li>
+                                    <button class="afisha__tag" type="button" data-tag="kinopokazy" aria-pressed="false">Кинопоказы</button>
+                                </li>
+                                <li>
+                                    <button class="afisha__tag" type="button" data-tag="yarmarka" aria-pressed="false">Ярмарка</button>
+                                </li>
+                                <!-- … остальные теги … -->
+                            </ul>
+                        </nav>
+
+                        <ul class="afisha__events" id="afisha-events" aria-live="polite">
+                            <!-- рендерится из JS -->
+                        </ul>
+
+                        <button class="afisha__more" type="button">
+                            <span>Показать ещё</span>
+                            <svg aria-hidden="true">…</svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
         </main>
         <load src="src/html/footer.html" />
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

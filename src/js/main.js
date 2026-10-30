@@ -90,3 +90,150 @@ $('.hobbies__slider').slick({
     speed: 600,
     cssEase: 'linear'
 });
+
+// ---------- Данные ----------
+const events = [
+    {
+        id: 1,
+        park: 'pokrovsky',
+        parkName: 'Зона отдыха «Покровский берег»',
+        title: 'Золотая осень: выходные в парках Москвы',
+        description: 'Здесь встречаются с друзьями, занимаются спортом…',
+        date: '2024-10-12',
+        dateEnd: '2024-10-13',
+        time: '12:00',
+        dateLabel: '12-13 октября, 12:00',
+        free: true,
+        tags: ['ekskursii', 'vystavki', 'master-klassy'],
+        image: '/src/assets/event-autumn.jpg'
+    },
+    {
+        id: 2,
+        park: 'gorky',
+        parkName: 'Парк Горького',
+        title: 'Экскурсия по осенним аллеям',
+        description: '…',
+        date: '2024-10-17',
+        time: '12:00',
+        dateLabel: '17 октября, 12:00',
+        free: false,
+        tags: ['ekskursii', 'vystavki'],
+        image: '/src/assets/event-park.jpg'
+    },
+    // …
+];
+
+// ---------- Состояние ----------
+const state = {
+    park: '',
+    date: '',
+    tags: new Set(),
+    visibleCount: 8
+};
+
+// ---------- Рендер одной карточки ----------
+function renderEvent(event) {
+    return `
+        <li class="afisha__event-item">
+            <article class="afisha__event">
+                <div class="afisha__event-media">
+                    <img class="afisha__event-image"
+                         src="${event.image}"
+                         alt="${event.title}"
+                         loading="lazy"
+                         width="400" height="300">
+                    ${event.free ? '<span class="afisha__event-badge">Бесплатно</span>' : ''}
+                </div>
+                <p class="afisha__event-park">${event.parkName}</p>
+                <h3 class="afisha__event-title">${event.title}</h3>
+                <p class="afisha__event-description">${event.description}</p>
+                <time class="afisha__event-time"
+                      datetime="${event.date}${event.dateEnd ? '/' + event.dateEnd : ''}T${event.time}">
+                    ${event.dateLabel}
+                </time>
+                <ul class="afisha__event-tags">
+                    ${event.tags.map(tag => `<li><span class="afisha__event-tag">${tag}</span></li>`).join('')}
+                </ul>
+            </article>
+        </li>
+    `;
+}
+
+// ---------- Фильтрация ----------
+function filterEvents() {
+    return events.filter(event => {
+        if (state.park && event.park !== state.park) return false;
+        if (state.date && event.date !== state.date && event.dateEnd !== state.date) return false;
+        if (state.tags.size > 0 && ![...state.tags].every(t => event.tags.includes(t))) return false;
+        return true;
+    });
+}
+
+// ---------- Рендер списка ----------
+const eventsList = document.getElementById('afisha-events');
+
+function render() {
+    const filtered = filterEvents();
+    const visible = filtered.slice(0, state.visibleCount);
+
+    eventsList.innerHTML = visible.map(renderEvent).join('');
+
+    if (filtered.length === 0) {
+        eventsList.innerHTML = '<li class="afisha__empty">По выбранным фильтрам событий нет</li>';
+    }
+}
+
+// ---------- Слушатели ----------
+document.getElementById('afisha-park-filter').addEventListener('change', e => {
+    state.park = e.target.value;
+    state.visibleCount = 8;
+    render();
+});
+
+document.querySelectorAll('.afisha__date[data-date]').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const date = btn.dataset.date;
+        const isActive = btn.getAttribute('aria-pressed') === 'true';
+
+        // Сброс всех
+        document.querySelectorAll('.afisha__date[data-date]').forEach(b => {
+            b.setAttribute('aria-pressed', 'false');
+        });
+
+        if (!isActive) {
+            btn.setAttribute('aria-pressed', 'true');
+            state.date = date;
+        } else {
+            state.date = '';
+        }
+
+        state.visibleCount = 8;
+        render();
+    });
+});
+
+document.querySelectorAll('.afisha__tag').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const tag = btn.dataset.tag;
+        const isActive = btn.getAttribute('aria-pressed') === 'true';
+
+        if (isActive) {
+            state.tags.delete(tag);
+            btn.setAttribute('aria-pressed', 'false');
+        } else {
+            state.tags.add(tag);
+            btn.setAttribute('aria-pressed', 'true');
+        }
+
+        state.visibleCount = 8;
+        render();
+    });
+});
+
+document.querySelector('.afisha__more').addEventListener('click', () => {
+    state.visibleCount += 8;
+    render();
+});
+
+// ---------- Первый рендер ----------
+render();
