@@ -100,7 +100,7 @@ $(document).ready(function() {
 const events = [
     {
         id: 1,
-        park: 'pokrovsky',
+        parks: ['pokrovsky'],
         parkName: 'Зона отдыха «Покровский берег»',
         title: 'Золотая осень: выходные в парках Москвы',
         description: 'Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе.',
@@ -114,7 +114,7 @@ const events = [
     },
     {
         id: 2,
-        park: 'gorky',
+        parks: ['gorky'],
         parkName: 'Парк Горького',
         title: 'Экскурсия по осенним аллеям',
         description: 'Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе.',
@@ -127,7 +127,7 @@ const events = [
     },
     {
         id: 3,
-        park: 'pokrovsky',
+        parks: ['pokrovsky', 'lianozovo', 'luzhniki', 'korobkovsky', 'gorky'],
         parkName: '5 парков',
         title: 'Йога под осенним небом',
         description: 'Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе.',
@@ -140,7 +140,7 @@ const events = [
     },
     {
         id: 4,
-        park: 'korobkovsky',
+        parks: ['korobkovsky'],
         parkName: 'Коробковский сад',
         title: 'Фестиваль «Осень в парках Москвы»',
         description: 'Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе.',
@@ -153,7 +153,7 @@ const events = [
     },
     {
         id: 5,
-        park: 'tushino',
+        parks: ['tushino'],
         parkName: 'Парк «Северное Тушино»',
         title: 'Джаз в осеннем парке',
         description: 'Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе.',
@@ -166,7 +166,7 @@ const events = [
     },
     {
         id: 6,
-        park: 'pokrovsky',
+        parks: ['pokrovsky', 'lianozovo', 'luzhniki', 'korobkovsky', 'gorky'],
         parkName: '5 парков',
         title: 'Мастерская осеннего гербария',
         description: 'Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе.',
@@ -179,7 +179,7 @@ const events = [
     },
     {
         id: 7,
-        park: 'lianozovo',
+        parks: ['lianozovo'],
         parkName: 'Лианозовский парк',
         title: 'Семейный квест «Тайны осени»',
         description: 'Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе.',
@@ -192,7 +192,7 @@ const events = [
     },
     {
         id: 8,
-        park: 'luzhniki',
+        parks: ['luzhniki'],
         parkName: 'Парк им. Юрия Лужкова',
         title: 'Осенний забег по парку',
         description: 'Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе.',
@@ -241,7 +241,7 @@ function renderEvent(event) {
 
 function filterEvents() {
     return events.filter(event => {
-        if (state.park && event.park !== state.park) return false;
+        if (state.park && !event.parks.includes(state.park)) return false;
         if (state.date && event.date !== state.date && event.dateEnd !== state.date) return false;
         if (state.tags.size > 0 && ![...state.tags].every(t => event.tags.includes(t))) return false;
         return true;
@@ -272,7 +272,6 @@ document.querySelectorAll('.afisha__date[data-date]').forEach(btn => {
         const date = btn.dataset.date;
         const isActive = btn.getAttribute('aria-pressed') === 'true';
 
-        // Сброс всех
         document.querySelectorAll('.afisha__date[data-date]').forEach(b => {
             b.setAttribute('aria-pressed', 'false');
         });
@@ -289,27 +288,79 @@ document.querySelectorAll('.afisha__date[data-date]').forEach(btn => {
     });
 });
 
-document.querySelectorAll('.afisha__tag').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const tag = btn.dataset.tag;
-        const isActive = btn.getAttribute('aria-pressed') === 'true';
-
-        if (isActive) {
-            state.tags.delete(tag);
-            btn.setAttribute('aria-pressed', 'false');
-        } else {
-            state.tags.add(tag);
-            btn.setAttribute('aria-pressed', 'true');
-        }
-
-        state.visibleCount = 8;
-        render();
-    });
-});
-
 document.querySelector('.afisha__more').addEventListener('click', () => {
     state.visibleCount += 8;
     render();
 });
 
 render();
+
+const allTags = [
+    'Кинопоказы',
+    'Ярмарка',
+    'Спорт',
+    'Мастер-классы',
+    'Лекции',
+    'Фестивали',
+    'Концерты',
+    'Шоу',
+    'Театр',
+    'Квизы',
+    'Детям',
+    'Анимация',
+    'Благотворительная акция',
+    'Выставки',
+    'Экскурсии',
+    'Диджей-сеты',
+    'Вечеринки',
+    'Квест'
+];
+
+const INITIAL_TAGS_COUNT = 17;
+let visibleTagsCount = INITIAL_TAGS_COUNT;
+
+const tagsList = document.querySelector('.afisha__tags-list');
+const tagsMore = document.querySelector('.afisha__tags-more');
+
+function renderTags() {
+    const visible = allTags.slice(0, visibleTagsCount);
+
+    tagsList.innerHTML = visible.map(tag => `
+        <li>
+            <button
+                class="afisha__tag"
+                type="button"
+                data-tag="${tag}"
+                aria-pressed="${state.tags.has(tag)}"
+            >${tag}</button>
+        </li>
+    `).join('');
+
+    tagsMore.hidden = visibleTagsCount >= allTags.length;
+}
+
+tagsList.addEventListener('click', (e) => {
+    const btn = e.target.closest('.afisha__tag');
+    if (!btn) return;
+
+    const tag = btn.dataset.tag;
+    const isActive = btn.getAttribute('aria-pressed') === 'true';
+
+    if (isActive) {
+        state.tags.delete(tag);
+        btn.setAttribute('aria-pressed', 'false');
+    } else {
+        state.tags.add(tag);
+        btn.setAttribute('aria-pressed', 'true');
+    }
+
+    state.visibleCount = 8;
+    render();
+});
+
+tagsMore.addEventListener('click', () => {
+    visibleTagsCount = allTags.length;
+    renderTags();
+});
+
+renderTags();

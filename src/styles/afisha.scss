@@ -163,6 +163,13 @@
         }
     }
 
+    &__tags {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
     &__tags-list {
         display: flex;
         flex-wrap: wrap;
@@ -172,7 +179,8 @@
         list-style: none;
     }
 
-    &__tag {
+    &__tag,
+    &__tags-more {
         padding: 5px 8px;
         border: none;
         border-radius: 4px;
@@ -187,6 +195,12 @@
             background: var(--basicinteractive);
             color: #fff;
             border-color: var(--basicinteractive);
+        }
+    }
+
+    &__tags-more {
+        &[hidden] {
+            display: none;
         }
     }
 
