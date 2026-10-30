@@ -103,27 +103,105 @@ const events = [
         park: 'pokrovsky',
         parkName: 'Зона отдыха «Покровский берег»',
         title: 'Золотая осень: выходные в парках Москвы',
-        description: 'Здесь встречаются с друзьями, занимаются спортом…',
+        description: 'Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе.',
         date: '2024-10-12',
         dateEnd: '2024-10-13',
         time: '12:00',
         dateLabel: '12-13 октября, 12:00',
         free: true,
-        tags: ['ekskursii', 'vystavki', 'master-klassy'],
-        image: '/src/assets/event-autumn.jpg'
+        tags: ['Экскурсии', 'Выставки', 'Мастер-классы'],
+        image: '/src/assets/afisha-1.jpg'
     },
     {
         id: 2,
         park: 'gorky',
         parkName: 'Парк Горького',
         title: 'Экскурсия по осенним аллеям',
-        description: '…',
+        description: 'Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе.',
         date: '2024-10-17',
         time: '12:00',
         dateLabel: '17 октября, 12:00',
         free: false,
-        tags: ['ekskursii', 'vystavki'],
-        image: '/src/assets/event-park.jpg'
+        tags: ['Экскурсии', 'Выставки', 'Мастер-классы'],
+        image: '/src/assets/afisha-2.jpg'
+    },
+    {
+        id: 3,
+        park: 'pokrovsky',
+        parkName: '5 парков',
+        title: 'Йога под осенним небом',
+        description: 'Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе.',
+        date: '2024-10-18',
+        time: '10:00',
+        dateLabel: '18 октября, 10:00',
+        free: false,
+        tags: ['Спорт'],
+        image: '/src/assets/afisha-3.jpg'
+    },
+    {
+        id: 4,
+        park: 'korobkovsky',
+        parkName: 'Коробковский сад',
+        title: 'Фестиваль «Осень в парках Москвы»',
+        description: 'Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе.',
+        date: '2024-9-19',
+        time: '12:00',
+        dateLabel: '19 сентября, 12:00',
+        free: false,
+        tags: ['Фестивали', 'Концерты', 'Детям'],
+        image: '/src/assets/afisha-4.jpg'
+    },
+    {
+        id: 5,
+        park: 'tushino',
+        parkName: 'Парк «Северное Тушино»',
+        title: 'Джаз в осеннем парке',
+        description: 'Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе.',
+        date: '2024-10-23',
+        time: '17:00',
+        dateLabel: '23 октября, 17:00',
+        free: true,
+        tags: ['Концерты', 'Вечеринки'],
+        image: '/src/assets/afisha-5.jpg'
+    },
+    {
+        id: 6,
+        park: 'pokrovsky',
+        parkName: '5 парков',
+        title: 'Мастерская осеннего гербария',
+        description: 'Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе.',
+        date: '2024-10-23',
+        time: '12:00',
+        dateLabel: '23 октября, 12:00',
+        free: false,
+        tags: ['Мастер-классы'],
+        image: '/src/assets/afisha-6.jpg'
+    },
+    {
+        id: 7,
+        park: 'lianozovo',
+        parkName: 'Лианозовский парк',
+        title: 'Семейный квест «Тайны осени»',
+        description: 'Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе.',
+        date: '2024-10-24',
+        time: '11:00',
+        dateLabel: '24 октября, 11:00',
+        free: true,
+        tags: ['Квест', 'Детям'],
+        image: '/src/assets/afisha-7.jpg'
+    },
+    {
+        id: 8,
+        park: 'luzhniki',
+        parkName: 'Парк им. Юрия Лужкова',
+        title: 'Осенний забег по парку',
+        description: 'Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе.',
+        date: '2024-10-24',
+        time: '12:00',
+        dateLabel: '24 октября, 12:00',
+        free: false,
+        tags: ['Спорт', 'Благотворительная акция'],
+        image: '/src/assets/afisha-8.jpg'
     },
 ];
 
@@ -147,7 +225,7 @@ function renderEvent(event) {
                     ${event.free ? '<span class="afisha__event-badge">Бесплатно</span>' : ''}
                 </div>
                 <p class="afisha__event-park">${event.parkName}</p>
-                <h3 class="afisha__event-title">${event.title}</h3>
+                <h3 class="afisha__event-title"><a href="#" class="afisha__link">${event.title}</a></h3>
                 <p class="afisha__event-description">${event.description}</p>
                 <time class="afisha__event-time"
                       datetime="${event.date}${event.dateEnd ? '/' + event.dateEnd : ''}T${event.time}">
