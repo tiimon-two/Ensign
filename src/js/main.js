@@ -91,7 +91,12 @@ $('.hobbies__slider').slick({
     cssEase: 'linear'
 });
 
-// ---------- Данные ----------
+$(document).ready(function() {
+  $('.js-select2-single').select2({
+    containerCssClass: 'afisha__select-container',
+  });
+});
+
 const events = [
     {
         id: 1,
@@ -120,10 +125,8 @@ const events = [
         tags: ['ekskursii', 'vystavki'],
         image: '/src/assets/event-park.jpg'
     },
-    // …
 ];
 
-// ---------- Состояние ----------
 const state = {
     park: '',
     date: '',
@@ -131,7 +134,6 @@ const state = {
     visibleCount: 8
 };
 
-// ---------- Рендер одной карточки ----------
 function renderEvent(event) {
     return `
         <li class="afisha__event-item">
@@ -159,7 +161,6 @@ function renderEvent(event) {
     `;
 }
 
-// ---------- Фильтрация ----------
 function filterEvents() {
     return events.filter(event => {
         if (state.park && event.park !== state.park) return false;
@@ -169,7 +170,6 @@ function filterEvents() {
     });
 }
 
-// ---------- Рендер списка ----------
 const eventsList = document.getElementById('afisha-events');
 
 function render() {
@@ -183,9 +183,8 @@ function render() {
     }
 }
 
-// ---------- Слушатели ----------
-document.getElementById('afisha-park-filter').addEventListener('change', e => {
-    state.park = e.target.value;
+$('#afisha-park-filter').on('select2:select select2:clear', function () {
+    state.park = $(this).val() || '';
     state.visibleCount = 8;
     render();
 });
@@ -235,5 +234,4 @@ document.querySelector('.afisha__more').addEventListener('click', () => {
     render();
 });
 
-// ---------- Первый рендер ----------
 render();

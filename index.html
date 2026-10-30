@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
         <link rel="stylesheet" href="src/styles/styles.scss">
         <title>Парки Москвы</title>
     </head>
@@ -247,12 +248,10 @@
                 <div class="container">
                     <div class="afisha__inner">
                         <header class="afisha__header">
-                            <h1 class="afisha__title" id="afisha-title">Афиша</h1>
-
+                            <h2 class="afisha__title" id="afisha-title">Афиша</h1>
                             <div class="afisha__filters">
                                 <label class="afisha__select-wrapper">
-                                    <span class="visually-hidden">Выбор парка</span>
-                                    <select class="afisha__select" id="afisha-park-filter">
+                                    <select class="afisha__select js-select2-single" id="afisha-park-filter">
                                         <option value="">Все парки Москвы</option>
                                         <option value="gorky">Парк Горького</option>
                                         <option value="pokrovsky">Зона отдыха «Покровский берег»</option>
@@ -265,7 +264,6 @@
 
                                 <a class="afisha__all-link" href="/afisha/all">
                                     <span>Смотреть все</span>
-                                    <svg class="afisha__all-icon" aria-hidden="true">…</svg>
                                 </a>
                             </div>
                         </header>
@@ -315,6 +313,7 @@
         <load src="src/html/footer.html" />
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/js/select2.min.js"></script>
         <script src="src/js/main.js"></script>
     </body>
 </html>
