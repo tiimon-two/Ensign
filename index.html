@@ -379,11 +379,39 @@
                     </div>
                 </div>
             </section>
+            <section class="parks">
+                <div class="container">
+                    <div class="parks__inner">
+                        <aside class="parks__filters">
+                            <h2 class="parks__title">Выберем<br> ваш Парк Москвы?</h2>
+
+                            <label class="parks__select-wrapper">
+                                <span class="visually-hidden">Выбор парка</span>
+                                <select class="parks__select js-select2-single" id="parks-filter">
+                                    <option value="">Все парки Москвы</option>
+                                </select>
+                            </label>
+
+                            <div class="parks__group">
+                                <h3 class="parks__group-title">Округа</h3>
+                                <ul class="parks__options" id="parks-districts"></ul>
+                            </div>
+
+                            <div class="parks__group">
+                                <h3 class="parks__group-title">Интересы</h3>
+                                <ul class="parks__options" id="parks-interests"></ul>
+                            </div>
+                        </aside>
+                        <div class="parks__map" id="parks__map"></div>
+                    </div>
+                </div>
+            </section>
         </main>
         <load src="src/html/footer.html" />
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/js/select2.min.js"></script>
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=3fa49712-435b-4d86-8231-a29965936deb&lang=ru_RU" type="text/javascript"></script>
         <script src="src/js/main.js"></script>
     </body>
 </html>

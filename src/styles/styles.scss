@@ -6,6 +6,7 @@
 @import 'spotlight';
 @import 'hobbies';
 @import 'afisha';
+@import 'parks';
 
 :root {
     --text-linesb-100: rgba(0, 0, 0, 1);
@@ -47,6 +48,9 @@
     --line-height-122: 122%;
     --font-size-12: 12px;
     --line-height-130: 130%;
+    --font-size-48: 48px;
+    --line-height-113: 113%;
+    --line-height-138: 138%;
 }
 
 @font-face {
@@ -62,4 +66,16 @@ body {
     max-width: 1680px;
     margin: 0 auto;
     padding: 0 120px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
 }
