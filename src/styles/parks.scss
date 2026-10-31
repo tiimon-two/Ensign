@@ -14,7 +14,7 @@
         display: flex;
         flex-direction: column;
         gap: 48px;
-        padding: 60px 80px 80px;
+        padding: 60px 80px 54px;
         background: var(--gray);
 
          &::after {
@@ -51,7 +51,7 @@
         width: 100% !important;
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
-        .select2-selection--single {
+        .select2-selection  {
             height: auto;
             padding: 17px 32px 17px 0;
             border: 0;
@@ -71,6 +71,10 @@
 
             .select2-selection__arrow {
                 display: none;
+            }
+
+            .select2-selection__clear {
+                right: 50px;
             }
         }
     }

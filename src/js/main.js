@@ -366,7 +366,6 @@ tagsMore.addEventListener('click', () => {
 renderTags();
 
 // ---------- Данные парков ----------
-// coords — [широта, долгота]. Замените на реальные координаты.
 const parks = [
     {
         id: 'gorky',
@@ -440,7 +439,6 @@ const parks = [
     }
 ];
 
-// ---------- Справочники для фильтров ----------
 const districts = [
     'Центральный', 'Северный', 'Северо-Восточный', 'Восточный',
     'Юго-Восточный', 'Южный', 'Юго-Западный', 'Западный',
@@ -452,14 +450,12 @@ const interests = [
     'Детский отдых', 'Природно-исторический парк'
 ];
 
-// ---------- Состояние ----------
 const parksState = {
-    district: new Set(),   // выбранные округа (OR)
-    interest: new Set(),   // выбранные интересы (OR)
-    parkId: ''             // выбранный парк в Select2
+    district: new Set(),
+    interest: new Set(),
+    parkIds: new Set()
 };
 
-// ---------- Карта ----------
 let map = null;
 
 function initMap() {
@@ -471,11 +467,10 @@ function initMap() {
         controls: ['zoomControl']
     });
 
-    map.geoObjects.removeAll(); // на всякий случай
+    map.geoObjects.removeAll();
     updateMap();
 }
 
-// ---------- Обновление меток на карте ----------
 function updateMap() {
     if (!map) return;
 
@@ -503,24 +498,21 @@ function updateMap() {
         map.geoObjects.add(placemark);
     });
 
-    // Если ничего не найдено — можно центрировать на Москве
     if (filtered.length === 0) {
         map.setCenter([55.76, 37.64], 10);
     }
 }
 
-// ---------- Фильтрация ----------
 function filterParks() {
     return parks.filter(park => {
-        // Select2 — точное совпадение id
-        if (parksState.parkId && park.id !== parksState.parkId) return false;
+        if (parksState.parkIds.size > 0 && !parksState.parkIds.has(park.id)) {
+            return false;
+        }
 
-        // Округа: достаточно совпадения с любым выбранным
         if (parksState.district.size > 0 && !parksState.district.has(park.district)) {
             return false;
         }
 
-        // Интересы: достаточно одного общего
         if (parksState.interest.size > 0) {
             const hasInterest = [...parksState.interest].some(tag =>
                 park.interests.includes(tag)
@@ -532,7 +524,6 @@ function filterParks() {
     });
 }
 
-// ---------- Рендер кнопок фильтров ----------
 function renderFilterButtons(container, values, stateSet, stateKey) {
     container.innerHTML = values.map(value => `
         <li>
@@ -565,7 +556,6 @@ function renderFilterButtons(container, values, stateSet, stateKey) {
     });
 }
 
-// ---------- Select2 ----------
 function initParkSelect() {
     const select = $('#parks-filter');
 
@@ -577,18 +567,20 @@ function initParkSelect() {
     select.select2({
         placeholder: 'Все парки Москвы',
         allowClear: true,
+        multiple: true,
+        closeOnSelect: false,
         containerCssClass: 'parks__select-container',
         dropdownCssClass: 'parks__select-dropdown',
         minimumResultsForSearch: Infinity
     });
 
-    select.on('select2:select select2:clear', function () {
-        state.parkId = $(this).val() || '';
+    select.on('change', function () {
+        const selected = $(this).val() || [];
+        parksState.parkIds = new Set(selected);
         updateMap();
     });
 }
 
-// ---------- Инициализация ----------
 document.addEventListener('DOMContentLoaded', () => {
     renderFilterButtons(
         document.getElementById('parks-districts'),
@@ -605,7 +597,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initParkSelect();
 });
 
-// Яндекс Карты загружаются асинхронно — ждём ymaps
 function waitForYmaps() {
     if (window.ymaps) {
         ymaps.ready(initMap);
