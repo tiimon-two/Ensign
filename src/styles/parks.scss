@@ -5,6 +5,7 @@
     &__inner {
         display: grid;
         grid-template-columns: 634px auto;
+        grid-template-rows: 124px auto;
         min-height: 640px;
     }
 
@@ -15,6 +16,7 @@
         flex-direction: column;
         gap: 48px;
         padding: 60px 80px 54px;
+        grid-row: 1 / -1;
         background: var(--gray);
 
          &::after {
@@ -140,6 +142,7 @@
     &__map {
         flex: 1 1 auto;
         min-height: 768px;
+        grid-row: 2 / -1;
         overflow: hidden;
         background: #e1eae8;
     }
