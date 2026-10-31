@@ -491,7 +491,10 @@ function updateMap() {
                 `
             },
             {
-                preset: 'islands#darkGreenDotIcon'
+                iconLayout: 'default#image',
+                iconImageHref: '../src/assets/pin.svg', // путь к вашему SVG
+                iconImageSize: [48, 48], // подставьте нужный размер
+                iconImageOffset: [-24, -24] // чтобы "острие" метки было в координате
             }
         );
 
