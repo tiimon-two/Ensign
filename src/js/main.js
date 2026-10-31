@@ -243,7 +243,7 @@ function filterEvents() {
     return events.filter(event => {
         if (state.park && !event.parks.includes(state.park)) return false;
         if (state.date && event.date !== state.date && event.dateEnd !== state.date) return false;
-        if (state.tags.size > 0 && ![...state.tags].every(t => event.tags.includes(t))) return false;
+        if (state.tags.size > 0 && ![...state.tags].some(t => event.tags.includes(t))) return false;
         return true;
     });
 }
