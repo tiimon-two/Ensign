@@ -45,7 +45,6 @@
         }
     }
 
-    // ---------- Список ----------
     &__list {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -101,11 +100,6 @@
 
     &__link {
         text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
 
         &:focus-visible {
             outline: 2px solid var(--basicinteractive);
