@@ -6,6 +6,7 @@ import { initAfisha } from './afisha.js';
 import { initParks } from './parks.js';
 import { initModal } from './modal.js';
 import { initSubscribeForm } from './subscribe-form.js';
+import '../styles/styles.scss';
 
 const $ = window.jQuery;
 
