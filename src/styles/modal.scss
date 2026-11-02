@@ -1,0 +1,153 @@
+.modal {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: min(560px, calc(100vw - 40px));
+    max-height: calc(100vh - 40px);
+    padding: 40px;
+    border: 0;
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 24px 64px rgba(0, 14, 51, 0.2);
+    overflow: auto;
+
+    // Нативный dialog рисует ::backdrop — затемнение фона
+    &::backdrop {
+        background: rgba(0, 14, 51, 0.5);
+        backdrop-filter: blur(2px);
+    }
+
+    // Блокируем скролл страницы, пока открыта модалка
+    &[open] {
+        animation: modal-fade 0.2s ease-out;
+    }
+
+    &__close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        border-radius: 50%;
+        background: transparent;
+        color: var(--dark-green);
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background: rgba(0, 14, 51, 0.06);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--dark-green);
+            outline-offset: 2px;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__title {
+        margin: 0;
+        padding-right: 40px;
+        font-family: var(--font-family);
+        font-weight: var(--font-weight-500);
+        font-size: var(--font-size-32);
+        line-height: var(--line-height-115);
+        color: var(--dark-green);
+    }
+
+    &__text {
+        margin: 0;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: var(--font-size-16);
+        line-height: var(--line-height-125);
+        color: rgba(0, 14, 51, 0.7);
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__label {
+        font-family: var(--font-family);
+        font-weight: var(--font-weight-500);
+        font-size: var(--font-size-14);
+        line-height: var(--line-height-120);
+        color: var(--dark-green);
+    }
+
+    &__input,
+    &__textarea {
+        width: 100%;
+        padding: 14px 18px;
+        border: 1px solid #e1eae8;
+        border-radius: 12px;
+        background: transparent;
+        font-family: var(--font-family);
+        font-size: var(--font-size-16);
+        line-height: var(--line-height-138);
+        color: var(--dark-green);
+        resize: vertical;
+
+        &::placeholder {
+            color: rgba(0, 14, 51, 0.3);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--dark-green);
+            outline-offset: 2px;
+            border-color: var(--dark-green);
+        }
+    }
+
+    &__submit {
+        align-self: flex-start;
+        padding: 16px 48px;
+        border: 0;
+        border-radius: 16px;
+        background: var(--dark-green);
+        color: #fff;
+        font-family: var(--font-family);
+        font-weight: var(--font-weight-500);
+        font-size: var(--font-size-18);
+        line-height: var(--line-height-122);
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background: #0b3d32;
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--dark-green);
+            outline-offset: 3px;
+        }
+    }
+}
+
+@keyframes modal-fade {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Блокируем скролл body, пока открыта модалка
+body:has(dialog[open]) {
+    overflow: hidden;
+}

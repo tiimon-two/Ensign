@@ -622,3 +622,69 @@ $('.articles__slider').slick({
     cssEase: 'linear',
     fade: false
 });
+
+// ---------- Модальное окно «Задать вопрос» ----------
+(function initAskQuestionModal() {
+    const dialog = document.getElementById('ask-question');
+    if (!dialog) return;
+
+    const openBtn = document.querySelector('[data-modal-open="ask-question"]');
+    const closeBtn = dialog.querySelector('.modal__close');
+    const form = dialog.querySelector('#ask-question-form');
+
+    // Открытие
+    if (openBtn) {
+        openBtn.addEventListener('click', () => {
+            dialog.showModal();   // нативный метод: backdrop, focus-trap, Esc
+        });
+    }
+
+    // Закрытие кнопкой
+    closeBtn?.addEventListener('click', () => dialog.close());
+
+    // Закрытие кликом по backdrop.
+    // При клике вне контента target === dialog (сам <dialog>),
+    // т.к. контент лежит внутри формы, а не прямо в dialog.
+    dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) {
+            dialog.close();
+        }
+    });
+
+    // Отправка формы
+    form?.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const data = new FormData(form);
+        const payload = Object.fromEntries(data.entries());
+
+        // TODO: заменить на реальную отправку (fetch)
+        console.log('Заявка:', payload);
+
+        form.reset();
+        dialog.close();
+    });
+})();
+
+// ---------- Форма подписки ----------
+(function initSubscribeForm() {
+    const form = document.getElementById('about-subscribe');
+    if (!form) return;
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const input = form.querySelector('input[type="email"]');
+        if (!input || !input.checkValidity()) {
+            input?.focus();
+            return;
+        }
+
+        const email = input.value.trim();
+
+        // TODO: заменить на реальную отправку (fetch)
+        console.log('Подписка:', email);
+
+        form.reset();
+    });
+})();
