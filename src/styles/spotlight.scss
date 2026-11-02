@@ -1,8 +1,10 @@
+@use 'variables' as *;
+
 .spotlight {
     width: 100%;
     margin-top: 60px;
     padding-bottom: 30px;
-    background: linear-gradient(180deg, rgba(225, 234, 232, 0.01) -7.63%, #e1eae8 56.71%);
+    background: linear-gradient(180deg, rgba(225, 234, 232, 0.01) -7.63%, $color-gray 56.71%);
 
     &__inner {
         display: flex;
@@ -20,13 +22,11 @@
 
     &__title {
         margin: 0;
-        font-family: var(--font-family);
         font-weight: var(--font-weight-500);
-        font-style: var(--font-style);
         font-size: var(--font-size-72);
         line-height: var(--line-height-114);
         letter-spacing: var(--letter-spacing-0);
-        color: var(--text-linesb-100);
+        color: $color-text;
     }
 
     &__description {
@@ -34,11 +34,10 @@
         max-width: 710px;
         text-align: right;
         opacity: 0.6;
-        font-family: var(--font-family);
         font-size: var(--font-size-24);
         line-height: var(--line-height-117);
         letter-spacing: var(--letter-spacing-0);
-        color: var(--text-linesb-100);
+        color: $color-text;
     }
 
     &__list {
@@ -58,7 +57,7 @@
         }
 
         &:focus-visible {
-            outline: 3px solid var(--basicinteractive);
+            outline: 3px solid $color-primary;
             outline-offset: 6px;
         }
     }
@@ -96,39 +95,28 @@
         overflow: hidden;
         transform: rotate(var(--rotation));
 
-        &--news {
-            background-color: var(--blue-sky);
-        }
-
-        &--afisha {
-            background-color: var(--purple-flowers);
-        }
-
-        &--journal {
-            background-color: var(--basicinteractive);
-        }
-
-        &--infrastructure {
-            background-color: var(--summer-orange);
-        }
+        &--news           { background-color: $color-blue-sky; }
+        &--afisha         { background-color: $color-purple-flowers; }
+        &--journal        { background-color: $color-primary; }
+        &--infrastructure { background-color: $color-summer-orange; }
 
         &--podcasts {
-            background-color: var(--yellow-leaves);
+            background-color: $color-yellow-leaves;
 
             .spotlight__tag,
             .spotlight__card-title {
-                color: var(--basicinteractive);
+                color: $color-primary;
             }
         }
 
         &--gallery {
-            background-color: var(--summer-grass);
+            background-color: $color-summer-grass;
         }
 
         &--vacation {
             align-items: center;
             justify-content: center;
-            background-color: var(--dark-green);
+            background-color: $color-primary;
         }
     }
 
@@ -139,40 +127,13 @@
         transform: rotate(calc(-1 * var(--rotation)));
         pointer-events: none;
 
-        &--news {
-            top: calc(50% - 1404px);
-            left: calc(50% - 1503px);
-        }
-
-        &--afisha {
-            top: calc(50% - 1333px);
-            left: calc(50% - 532px);
-        }
-
-        &--journal {
-            top: calc(50% - 1364px);
-            left: calc(50% - 815px);
-        }
-
-        &--infrastructure {
-            top: calc(50% - 981px);
-            left: calc(50% - 777px);
-        }
-
-        &--podcasts {
-            top: calc(50% - 1094px);
-            left: calc(50% - 504px);
-        }
-
-        &--gallery {
-            top: calc(50% - 1431px);
-            left: calc(50% - 751px);
-        }
-
-        &--vacation {
-            top: calc(50% - 1044px);
-            left: calc(50% - 450px);
-        }
+        &--news           { top: calc(50% - 1404px); left: calc(50% - 1503px); }
+        &--afisha         { top: calc(50% - 1333px); left: calc(50% - 532px); }
+        &--journal        { top: calc(50% - 1364px); left: calc(50% - 815px); }
+        &--infrastructure { top: calc(50% - 981px);  left: calc(50% - 777px); }
+        &--podcasts       { top: calc(50% - 1094px); left: calc(50% - 504px); }
+        &--gallery        { top: calc(50% - 1431px); left: calc(50% - 751px); }
+        &--vacation       { top: calc(50% - 1044px); left: calc(50% - 450px); }
     }
 
     &__tag {
@@ -183,7 +144,7 @@
         font-size: var(--font-size-18);
         line-height: var(--line-height-122);
         letter-spacing: var(--letter-spacing-0);
-        color: var(--text-linesb-0);
+        color: $color-text-inverse;
     }
 
     &__media {
@@ -205,33 +166,10 @@
         transform: rotate(calc(-1 * var(--rotation)));
         object-fit: cover;
 
-        &--wide {
-            top: -48px;
-            left: calc(50% - 390px);
-            width: 780px;
-            height: 576px;
-        }
-
-        &--medium {
-            top: -25px;
-            left: calc(50% - 376px);
-            width: 752px;
-            height: 529px;
-        }
-
-        &--tall {
-            top: -56px;
-            left: calc(50% - 448px);
-            width: 898px;
-            height: 592px;
-        }
-
-        &--compact {
-            top: -24px;
-            left: calc(50% - 371px);
-            width: 741px;
-            height: 528px;
-        }
+        &--wide    { top: -48px; left: calc(50% - 390px); width: 780px; height: 576px; }
+        &--medium  { top: -25px; left: calc(50% - 376px); width: 752px; height: 529px; }
+        &--tall    { top: -56px; left: calc(50% - 448px); width: 898px; height: 592px; }
+        &--compact { top: -24px; left: calc(50% - 371px); width: 741px; height: 528px; }
     }
 
     &__vector {
@@ -248,13 +186,11 @@
     &__card-title {
         position: relative;
         margin: 0;
-        font-family: var(--head-24-head-font-family);
-        font-weight: var(--head-24-head-font-weight);
-        font-style: var(--head-24-head-font-style);
-        font-size: var(--head-24-head-font-size);
-        line-height: var(--head-24-head-line-height);
-        letter-spacing: var(--head-24-head-letter-spacing);
-        color: var(--text-linesb-0);
+        font-weight: var(--font-weight-500);
+        font-size: var(--font-size-24);
+        line-height: var(--line-height-117);
+        letter-spacing: var(--letter-spacing-0);
+        color: $color-text-inverse;
 
         &--center {
             text-align: center;

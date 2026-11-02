@@ -1,13 +1,16 @@
+@use 'variables' as *;
+
 .articles {
     width: 100%;
     margin-top: 80px;
-    background: linear-gradient(180deg, rgba(246, 248, 247, 0) 0%, #f6f8f7 100%);
+    background: linear-gradient(180deg, rgba(246, 248, 247, 0) 0%, $color-bg-light 100%);
 
     &__inner {
         display: flex;
         flex-direction: column;
         gap: 40px;
     }
+
     &__header {
         display: flex;
         align-items: center;
@@ -17,24 +20,21 @@
 
     &__title {
         margin: 0;
-        font-family: var(--font-family);
         font-weight: var(--font-weight-500);
-        font-style: var(--font-style);
         font-size: var(--font-size-72);
         line-height: var(--line-height-114);
         letter-spacing: var(--letter-spacing-0);
-        color: #000;
+        color: $color-text;
     }
 
     &__description {
         margin: 0;
         max-width: 586px;
         text-align: right;
-        font-family: var(--font-family);
         font-weight: 400;
         font-size: var(--font-size-24);
         line-height: var(--line-height-117);
-        color: #000;
+        color: $color-text;
     }
 
     &__content {
@@ -67,23 +67,21 @@
         margin-bottom: 56px;
         padding: 5px 8px;
         text-transform: uppercase;
-        font-family: var(--font-family);
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-12);
         line-height: var(--line-height-117);
-        color: var(--dark-green);
-        background: #e1eae8;
+        color: $color-primary;
+        background: $color-gray;
         border-radius: 4px;
     }
 
     &__cover-label {
         margin-bottom: 18px;
         text-transform: uppercase;
-        font-family: var(--font-family);
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-12);
         line-height: var(--line-height-117);
-        color: #fff;
+        color: $color-text-inverse;
     }
 
     &__cover-logo {
@@ -109,7 +107,6 @@
         justify-content: space-between;
         gap: 24px;
     }
-
 
     &__slider {
         position: relative;
@@ -146,7 +143,7 @@
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-12);
         line-height: var(--line-height-117);
-        color: var(--dark-green);
+        color: $color-primary;
     }
 
     &__card-divider {
@@ -161,7 +158,7 @@
         font-size: var(--font-size-24);
         line-height: var(--line-height-117);
         font-weight: var(--font-weight-500);
-        color: var(--dark-green);
+        color: $color-primary;
     }
 
     &__card-link {
@@ -174,7 +171,7 @@
         }
 
         &:focus-visible {
-            outline: 2px solid var(--basicinteractive);
+            outline: 2px solid $color-primary;
             outline-offset: 3px;
         }
     }
@@ -183,13 +180,13 @@
         margin: 0;
         font-size: var(--font-size-16);
         line-height: var(--line-height-125);
-        color: #000;
+        color: $color-text;
     }
 
     &__card-time {
         font-size: var(--font-size-16);
         line-height: var(--line-height-130);
-        color: var(--dark-green);
+        color: $color-primary;
     }
 
     &__card-tags {
@@ -204,12 +201,12 @@
     &__card-tag {
         padding: 5px 8px;
         border-radius: 4px;
-        background: var(--gray);
+        background: $color-gray;
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-12);
         line-height: var(--line-height-117);
         text-transform: uppercase;
-        color: var(--dark-green);
+        color: $color-primary;
     }
 
     &__controls {
@@ -232,7 +229,7 @@
         height: 56px;
         border: 0;
         border-radius: 50%;
-        background-color: #fff;
+        background-color: $color-white;
         background-image: url('../assets/arrow-black.svg');
         background-repeat: no-repeat;
         background-position: center;
@@ -241,11 +238,11 @@
         transition: background-color 0.2s;
 
         &:hover {
-            background-color: #f1f1f1;
+            background-color: $color-gray-light;
         }
 
         &:focus-visible {
-            outline: 2px solid var(--basicinteractive);
+            outline: 2px solid $color-primary;
             outline-offset: 3px;
         }
 
@@ -264,14 +261,13 @@
         position: relative;
         padding: 16px;
         padding-right: 54px;
-        font-family: var(--font-family);
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-18);
         line-height: var(--line-height-122);
-        color: #000;
+        color: $color-text;
         text-decoration: none;
         border-radius: 16px;
-        background-color: #ffffff;
+        background-color: $color-white;
 
         &::after {
             position: absolute;
@@ -286,12 +282,12 @@
         }
 
         &:hover {
-            color: var(--dark-green);
+            color: $color-primary;
         }
 
         &:focus-visible {
-            color: var(--dark-green);
-            outline: 2px solid var(--basicinteractive);
+            color: $color-primary;
+            outline: 2px solid $color-primary;
             outline-offset: 3px;
         }
     }

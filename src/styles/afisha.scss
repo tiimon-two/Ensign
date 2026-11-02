@@ -1,7 +1,9 @@
+@use 'variables' as *;
+
 .afisha {
     width: 100%;
     padding-top: 60px;
-    background: linear-gradient(180deg, #e1eae8 0%, rgba(225, 234, 232, 0) 16.06%);
+    background: linear-gradient(180deg, $color-gray 0%, rgba(225, 234, 232, 0) 16.06%);
 
     &__inner {
         display: flex;
@@ -18,7 +20,6 @@
 
     &__title {
         margin: 0;
-        font-family: var(--font-family);
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-72);
         line-height: var(--line-height-114);
@@ -37,18 +38,17 @@
             padding: 16px 48px 16px 20px;
             font-size: var(--font-size-18);
             line-height: var(--line-height-122);
-            font-weight: 500;
+            font-weight: var(--font-weight-500);
             border: none;
             border-radius: 16px;
             background: transparent url('/src/assets/mark.svg') no-repeat right 24px center;
-            background-color: #ffffff;
+            background-color: $color-white;
             font: inherit;
             cursor: pointer;
 
             .select2-selection__rendered {
                 padding: 0;
-                font-family: var(--font-family);
-                color: var(--text-linesb-100);
+                color: $color-text;
             }
 
             .select2-selection__arrow {
@@ -66,9 +66,9 @@
         box-sizing: border-box;
         font-size: var(--font-size-18);
         line-height: var(--line-height-122);
-        font-weight: 500;
-        color: #000000;
-        background-color: #ffffff;
+        font-weight: var(--font-weight-500);
+        color: $color-text;
+        background-color: $color-white;
         border-radius: 16px;
         text-decoration: none;
 
@@ -89,7 +89,7 @@
         font-size: var(--font-size-12);
         line-height: var(--line-height-117);
         text-transform: uppercase;
-        color: rgba(0, 14, 51, 0.3);
+        color: $color-overlay-30;
     }
 
     &__dates-row {
@@ -121,13 +121,13 @@
         transition: border 0.2s ease;
 
         &[aria-pressed='true'] {
-            border-color: var(--basicinteractive);
+            border-color: $color-primary;
         }
     }
 
     &__date-day {
         text-align: center;
-        color: var(--dark-green);
+        color: $color-primary;
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-20);
         line-height: var(--line-height-120);
@@ -139,7 +139,7 @@
         font-size: var(--font-size-12);
         line-height: var(--line-height-117);
         text-transform: uppercase;
-        color: rgba(0, 14, 51, 0.3);
+        color: $color-overlay-30;
     }
 
     &__dates-next {
@@ -184,7 +184,7 @@
         padding: 5px 8px;
         border: none;
         border-radius: 4px;
-        background: var(--gray);
+        background: $color-gray;
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-12);
         line-height: var(--line-height-117);
@@ -192,9 +192,9 @@
         cursor: pointer;
 
         &[aria-pressed='true'] {
-            background: var(--basicinteractive);
-            color: #fff;
-            border-color: var(--basicinteractive);
+            background: $color-primary;
+            color: $color-text-inverse;
+            border-color: $color-primary;
         }
     }
 
@@ -212,6 +212,7 @@
         margin: 0;
         padding: 0;
         list-style: none;
+        margin-bottom: 16px;
     }
 
     &__event {
@@ -242,8 +243,8 @@
         height: 24px;
         box-sizing: border-box;
         border-radius: 4px;
-        background: var(--gray);
-        color: var(--dark-green);
+        background: $color-gray;
+        color: $color-primary;
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-12);
         line-height: var(--line-height-117);
@@ -256,7 +257,7 @@
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-12);
         line-height: var(--line-height-117);
-        color: var(--dark-green);
+        color: $color-primary;
     }
 
     &__link,
@@ -265,7 +266,7 @@
         font-size: var(--font-size-24);
         line-height: var(--line-height-117);
         font-weight: var(--font-weight-500);
-        color: var(--dark-green);
+        color: $color-primary;
     }
 
     &__link {
@@ -276,13 +277,13 @@
         margin: 0;
         font-size: var(--font-size-16);
         line-height: var(--line-height-125);
-        color: #000000;
+        color: $color-text;
     }
 
     &__event-time {
         font-size: var(--font-size-16);
         line-height: var(--line-height-130);
-        color: var(--dark-green);
+        color: $color-primary;
     }
 
     &__event-tags {
@@ -298,11 +299,12 @@
         padding: 5px 8px;
         border: none;
         border-radius: 4px;
-        background: var(--gray);
+        background: $color-gray;
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-12);
         line-height: var(--line-height-117);
         text-transform: uppercase;
+        color: $color-primary;
     }
 
     &__more {

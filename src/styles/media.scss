@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .media {
     display: flex;
     flex: 1 1 auto;
@@ -12,13 +14,11 @@
     }
 
     &__label {
-        font-family: var(--font-family);
         font-weight: var(--font-weight-500);
-        font-style: var(--font-style);
         font-size: var(--font-size-16);
         line-height: var(--line-height-120);
         letter-spacing: var(--letter-spacing-0);
-        color: #727874;
+        color: $color-text-secondary;
         white-space: nowrap;
     }
 
@@ -30,11 +30,11 @@
         text-decoration: none;
 
         &:hover .media__label {
-            color: var(--text-linesb-100);
+            color: $color-text;
         }
 
         &:focus-visible {
-            outline: 2px solid #0d483b;
+            outline: 2px solid $color-primary;
             outline-offset: 2px;
             border-radius: 8px;
         }

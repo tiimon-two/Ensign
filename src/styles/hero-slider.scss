@@ -1,3 +1,4 @@
+@use 'variables' as *;
 
 .hero-slider {
     .slick {
@@ -16,6 +17,7 @@
             mask-repeat: no-repeat;
         }
     }
+
     position: relative;
     width: 100%;
     margin-bottom: var(--margin-l);
@@ -34,7 +36,6 @@
             background-image: url('/src/assets/hero-pattern.svg');
             pointer-events: none;
         }
-
     }
 
     &__track {
@@ -45,7 +46,6 @@
     &__slide {
         position: relative;
         height: 740px;
-        // overflow: hidden;
         aspect-ratio: 16 / 9;
     }
 
@@ -64,7 +64,7 @@
         z-index: 2;
         top: 216px;
         left: 120px;
-        max-width: 760px;
+        max-width: 835px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -73,11 +73,10 @@
 
     &__title {
         margin: 0;
-        font-family: var(--font-family);
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-88);
         line-height: var(--line-height-93);
-        color: #fff;
+        color: $color-text-inverse;
     }
 
     &__text {
@@ -85,7 +84,7 @@
         margin-bottom: 28px;
         font-size: var(--font-size-24);
         line-height: var(--line-height-117);
-        color: #fff;
+        color: $color-text-inverse;
     }
 
     &__link {
@@ -93,21 +92,21 @@
         padding: 16px 24px;
         border-radius: 16px;
         backdrop-filter: blur(24px);
-        background: rgba(255, 255, 255, 0.1);
-        color: #ffffff;
+        background: $color-white-10;
+        color: $color-text-inverse;
         text-decoration: none;
-        font-weight: 500;
+        font-weight: var(--font-weight-500);
         font-size: var(--font-size-18);
         line-height: var(--line-height-122);
         transition: background-color 0.2s;
         cursor: pointer;
 
         &:hover {
-            background: var(--basicinteractive);
+            background: $color-primary;
         }
 
         &:focus-visible {
-            outline: 2px solid #fff;
+            outline: 2px solid $color-text-inverse;
             outline-offset: 3px;
         }
     }
@@ -115,27 +114,25 @@
     &__progress {
         position: absolute;
         z-index: 2;
-        // По центру внизу
         left: 50%;
         bottom: 24px;
         transform: translateX(-50%);
         width: min(400px, 60%);
         height: 3px;
         border-radius: 2px;
-        background: rgba(255, 255, 255, 0.3);
+        background: $color-white-30;
         overflow: hidden;
     }
 
     &__progress-bar {
         width: 0;
         height: 100%;
-        background: #fff;
+        background: $color-white;
     }
 
     &__controls {
         position: absolute;
         z-index: 3;
-        // Правый нижний угол
         right: 32px;
         bottom: 32px;
         display: flex;
@@ -147,10 +144,9 @@
         display: inline-flex;
         align-items: baseline;
         gap: 6px;
-        font-family: var(--font-family);
-        font-weight: 500;
-        font-size: 18px;
-        color: #fff;
+        font-weight: var(--font-weight-500);
+        font-size: var(--font-size-18);
+        color: $color-text-inverse;
     }
 
     &__current {
@@ -170,14 +166,14 @@
         position: relative;
         width: 56px;
         height: 56px;
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        border: 1px solid $color-white-40;
         border-radius: 50%;
         backdrop-filter: blur(24px);
-        background: rgba(255, 255, 255, 0.1);
+        background: $color-white-10;
         cursor: pointer;
         transition: background-color 0.2s;
-        
-         &::before {
+
+        &::before {
             content: '';
             position: absolute;
             inset: 0;
@@ -197,11 +193,11 @@
         }
 
         &:hover {
-            background: var(--basicinteractive);
+            background: $color-primary;
         }
 
         &:focus-visible {
-            outline: 2px solid #fff;
+            outline: 2px solid $color-text-inverse;
             outline-offset: 3px;
         }
     }

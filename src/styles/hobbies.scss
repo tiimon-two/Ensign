@@ -1,8 +1,10 @@
+@use 'variables' as *;
+
 .hobbies {
     width: 100%;
     padding-top: 100px;
     padding-bottom: 60px;
-    background-color: var(--gray);
+    background-color: $color-gray;
 
     &__inner {
         display: flex;
@@ -21,13 +23,11 @@
     &__title {
         max-width: 600px;
         margin: 0;
-        font-family: var(--font-family);
         font-weight: var(--font-weight-500);
-        font-style: var(--font-style);
         font-size: var(--font-size-72);
         line-height: var(--line-height-114);
         letter-spacing: var(--letter-spacing-0);
-        color: var(--text-linesb-100);
+        color: $color-text;
     }
 
     &__arrows {
@@ -41,7 +41,7 @@
         height: 56px;
         border: 0;
         border-radius: 50%;
-        background-color: #fff;
+        background-color: $color-white;
         background-image: url('/src/assets/arrow-black.svg');
         background-repeat: no-repeat;
         background-position: center;
@@ -50,11 +50,11 @@
         transition: background-color 0.2s;
 
         &:hover {
-            background-color: #f1f1f1;
+            background-color: $color-gray-light;
         }
 
         &:focus-visible {
-            outline: 2px solid var(--basicinteractive);
+            outline: 2px solid $color-primary;
             outline-offset: 3px;
         }
 
@@ -85,39 +85,45 @@
         background-position: center;
         background-repeat: no-repeat;
 
-        &--kids      {
+        &--kids {
             background-image: url('/src/assets/vector-1.svg');
-
         }
-        &--sport     {
+
+        &--sport {
             background-image: url('/src/assets/heart-vector.svg');
 
             .hobbies__card-info {
-                background-color: var(--dark-green);
+                background-color: $color-primary;
             }
         }
-        &--leisure   {
+
+        &--leisure {
             background-image: url('/src/assets/heart-2.svg');
 
             .hobbies__card-info {
-                background-color: var(--purple);
+                background-color: $color-purple;
             }
         }
+
         &--landmarks {
-             background-image: url('/src/assets/vector-2.svg');
+            background-image: url('/src/assets/vector-2.svg');
 
             .hobbies__card-info {
-                background-color: var(--summer-orange);
+                background-color: $color-summer-orange;
             }
         }
-        &--podcasts  {
-             background-image: url('/src/assets/heart-vector.svg');
+
+        &--podcasts {
+            background-image: url('/src/assets/heart-vector.svg');
 
             .hobbies__card-info {
-                background-color: var(--dark-green);
+                background-color: $color-primary;
             }
         }
-        &--gallery   { background-image: url('/src/assets/vector-1.svg'); }
+
+        &--gallery {
+            background-image: url('/src/assets/vector-1.svg');
+        }
     }
 
     &__card-info {
@@ -127,14 +133,14 @@
         width: 322px;
         padding: 20px;
         box-sizing: border-box;
-        background-color: var(--blue);
+        background-color: $color-blue;
 
         &:nth-child(3n) {
-            background-color: var(--summer-orange);
+            background-color: $color-summer-orange;
         }
 
         &:nth-child(4n) {
-            background-color: var(--purple);
+            background-color: $color-purple;
         }
     }
 
@@ -142,23 +148,19 @@
         display: block;
         margin-bottom: 25px;
         text-transform: uppercase;
-        font-family: var(--font-family);
         font-weight: var(--font-weight-500);
-        font-style: var(--font-style);
         font-size: var(--font-size-12);
         line-height: var(--line-height-117);
         letter-spacing: var(--letter-spacing-0);
-        color: #fff;
+        color: $color-text-inverse;
     }
 
     &__card-title {
         margin: 0;
-        font-family: var(--font-family);
         font-weight: var(--font-weight-500);
-        font-style: var(--font-style);
         font-size: var(--font-size-24);
         line-height: var(--line-height-117);
         letter-spacing: var(--letter-spacing-0);
-        color: #fff;
+        color: $color-text-inverse;
     }
 }

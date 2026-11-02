@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .header {
     position: relative;
     display: flex;
@@ -20,7 +22,7 @@
         align-items: center;
         gap: 24px;
         padding: 12px 0 12px 10px;
-        border-bottom: 1px solid #e1eae8;
+        border-bottom: 1px solid $color-gray;
         z-index: 2;
     }
 
@@ -35,11 +37,11 @@
         cursor: pointer;
 
         &:hover {
-            background: rgba(0, 14, 51, 0.06);
+            background: $color-overlay-06;
         }
 
         &:focus-visible {
-            outline: 2px solid #0d483b;
+            outline: 2px solid $color-primary;
             outline-offset: 2px;
         }
     }
@@ -81,23 +83,21 @@
         cursor: pointer;
 
         &:hover {
-            background: rgba(0, 14, 51, 0.06);
+            background: $color-overlay-06;
         }
 
         &:focus-visible {
-            outline: 2px solid #0d483b;
+            outline: 2px solid $color-primary;
             outline-offset: 2px;
         }
     }
 
     &__tool-label {
-        font-family: var(--font-family);
         font-weight: var(--font-weight-500);
-        font-style: var(--font-style);
         font-size: var(--font-size-16);
         line-height: var(--line-height-120);
         letter-spacing: var(--letter-spacing-0);
-        color: #727874;
+        color: $color-text-secondary;
         white-space: nowrap;
     }
 
@@ -127,15 +127,15 @@
         }
     }
 
-   &__bottom {
-    position: relative;
-    z-index: 0;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    width: 100%;
-    padding: 12px 0;
-}
+    &__bottom {
+        position: relative;
+        z-index: 0;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        width: 100%;
+        padding: 12px 0;
+    }
 
     &__logo {
         display: block;

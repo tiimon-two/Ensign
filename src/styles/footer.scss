@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .footer {
     width: 100%;
 
@@ -9,7 +11,7 @@
     }
 
     a:focus-visible {
-        outline: 2px solid var(--basicinteractive);
+        outline: 2px solid $color-primary;
         outline-offset: 3px;
     }
 
@@ -121,13 +123,11 @@
 
     &__nav-link {
         display: inline-block;
-        color: var(--text-linesb-0);
-        font-family: var(--font-family);
+        color: $color-text-inverse;
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-20);
         line-height: var(--line-height-120);
         letter-spacing: var(--letter-spacing-0);
-        font-style: var(--font-style);
         text-decoration: none;
     }
 
@@ -151,12 +151,11 @@
     }
 
     &__contacts-label {
-        font-family: "PT Root UI-Medium", Helvetica;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 18px;
-        letter-spacing: 0;
-        color: var(--text-linesb-0);
+        font-weight: var(--font-weight-500);
+        font-size: var(--font-size-14);
+        line-height: var(--line-height-129);
+        letter-spacing: var(--letter-spacing-0);
+        color: $color-text-inverse;
         opacity: 0.4;
         text-transform: uppercase;
     }
@@ -168,13 +167,11 @@
     &__contacts-link,
     &__contacts-address {
         display: inline-block;
-        color: var(--text-linesb-0);
-        font-family: var(--font-family);
+        color: $color-text-inverse;
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-20);
         line-height: var(--line-height-120);
         letter-spacing: var(--letter-spacing-0);
-        font-style: var(--font-style);
         text-decoration: none;
         word-break: break-word;
     }
@@ -194,13 +191,11 @@
     &__copyright {
         flex: 1 1 0;
         margin: 0;
-        color: var(--backgroundblack);
-        font-family: var(--font-family);
+        color: $color-text;
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-14);
         line-height: var(--line-height-129);
         letter-spacing: var(--letter-spacing-0);
-        font-style: var(--font-style);
     }
 
     &__social {
@@ -224,11 +219,11 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--basicinteractive);
+        background-color: $color-primary;
         border-radius: 50%;
 
         &:hover {
-            background-color: var(--basic-light);
+            background-color: $color-primary-light;
         }
     }
 
@@ -240,30 +235,27 @@
         flex: 1 1 0;
         margin: 0;
         text-align: right;
-        font-family: var(--font-family);
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-14);
         line-height: var(--line-height-120);
         letter-spacing: var(--letter-spacing-0);
-        font-style: var(--font-style);
     }
 
     &__made-by-label {
-        color: rgba(0, 0, 0, 0.4);
+        color: $color-black-40;
     }
 
     &__made-by-link {
-        color: var(--basicinteractive);
+        color: $color-primary;
         text-decoration: none;
 
         &:hover {
-            color: var(--basic-light);
+            color: $color-primary-light;
         }
     }
 
     &__large-brand {
         display: flex;
-
         justify-content: flex-start;
         padding-top: 24px;
     }

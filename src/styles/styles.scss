@@ -20,7 +20,12 @@
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: $font-family;
+    font-style: $font-style;
+    font-size: var(--font-size-16);
+    line-height: var(--line-height-120);
+    color: $color-text;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {

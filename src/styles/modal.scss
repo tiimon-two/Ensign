@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .modal {
     position: fixed;
     inset: 0;
@@ -7,12 +9,12 @@
     max-height: calc(100vh - 40px);
     border: 0;
     border-radius: 24px;
-    background: #fff;
-    box-shadow: 0 24px 64px rgba(0, 14, 51, 0.2);
+    background: $color-white;
+    box-shadow: 0 24px 64px $color-overlay-20;
     overflow: auto;
 
     &::backdrop {
-        background: rgba(0, 14, 51, 0.5);
+        background: $color-overlay-50;
         backdrop-filter: blur(2px);
     }
 
@@ -32,16 +34,16 @@
         border: 0;
         border-radius: 50%;
         background: transparent;
-        color: var(--dark-green);
+        color: $color-primary;
         cursor: pointer;
         transition: background-color 0.2s;
 
         &:hover {
-            background: rgba(0, 14, 51, 0.06);
+            background: $color-overlay-06;
         }
 
         &:focus-visible {
-            outline: 2px solid var(--dark-green);
+            outline: 2px solid $color-primary;
             outline-offset: 2px;
         }
     }
@@ -55,20 +57,18 @@
     &__title {
         margin: 0;
         padding-right: 40px;
-        font-family: var(--font-family);
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-32);
         line-height: var(--line-height-115);
-        color: var(--dark-green);
+        color: $color-primary;
     }
 
     &__text {
         margin: 0;
-        font-family: var(--font-family);
         font-weight: 400;
         font-size: var(--font-size-16);
         line-height: var(--line-height-125);
-        color: rgba(0, 14, 51, 0.7);
+        color: $color-overlay-70;
     }
 
     &__field {
@@ -78,34 +78,32 @@
     }
 
     &__label {
-        font-family: var(--font-family);
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-14);
         line-height: var(--line-height-120);
-        color: var(--dark-green);
+        color: $color-primary;
     }
 
     &__input,
     &__textarea {
         width: 100%;
         padding: 17px 10px;
-        border: 1px solid #e1eae8;
+        border: 1px solid $color-gray;
         border-radius: 12px;
         background: transparent;
-        font-family: var(--font-family);
         font-size: var(--font-size-16);
         line-height: var(--line-height-138);
-        color: var(--dark-green);
+        color: $color-primary;
         resize: vertical;
 
         &::placeholder {
-            color: rgba(0, 14, 51, 0.3);
+            color: $color-overlay-30;
         }
 
         &:focus-visible {
-            outline: 2px solid var(--dark-green);
+            outline: 2px solid $color-primary;
             outline-offset: 2px;
-            border-color: var(--dark-green);
+            border-color: $color-primary;
         }
     }
 
@@ -114,9 +112,8 @@
         padding: 16px 48px;
         border: 0;
         border-radius: 16px;
-        background: var(--dark-green);
-        color: #fff;
-        font-family: var(--font-family);
+        background: $color-primary;
+        color: $color-text-inverse;
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-18);
         line-height: var(--line-height-122);
@@ -124,11 +121,11 @@
         transition: background-color 0.2s;
 
         &:hover {
-            background: #0b3d32;
+            background: $color-primary-dark;
         }
 
         &:focus-visible {
-            outline: 2px solid var(--dark-green);
+            outline: 2px solid $color-primary;
             outline-offset: 3px;
         }
     }
