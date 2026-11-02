@@ -8,6 +8,7 @@
 @import 'afisha';
 @import 'parks';
 @import 'news';
+@import 'articles';
 
 :root {
     --text-linesb-100: rgba(0, 0, 0, 1);
@@ -52,6 +53,7 @@
     --font-size-48: 48px;
     --line-height-113: 113%;
     --line-height-138: 138%;
+    --line-height-125: 125%;
 }
 
 @font-face {
