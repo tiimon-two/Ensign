@@ -1,66 +1,21 @@
-@import 'header';
-@import 'nav';
-@import 'media';
-@import 'footer';
-@import 'hero-slider';
-@import 'spotlight';
-@import 'hobbies';
-@import 'afisha';
-@import 'parks';
-@import 'news';
-@import 'articles';
-@import 'about';
-@import 'modal';
-@import 'partners';
-
-:root {
-    --text-linesb-100: rgba(0, 0, 0, 1);
-    --basicinteractive: rgba(13, 72, 59, 1);
-    --basic-light: rgba(13, 72, 59, 0.8);
-    --transparentgray-30: rgba(0, 14, 51, 0.3);
-    --text-linesb-0: rgba(255, 255, 255, 1);
-    --transparentgray-15: rgba(0, 14, 51, 0.15);
-    --seasonal-colorswintercappuccino: rgba(246, 211, 145, 1);
-    --backgroundblack: #000000;
-    --blue-sky: #C0F8FF;
-    --purple-flowers: #9747FF;
-    --summer-orange: #ff871c;
-    --yellow-leaves: #ffc507;
-    --summer-grass: #008e1c;
-    --dark-green: #0d483b;
-    --gray: #e1eae8;
-    --blue: #1eb9cb;
-    --purple: #b18ff8;
-    --font-family: "PT Root UI", Helvetica;
-    --font-weight-500: 500;
-    --font-size-16: 16px;
-    --letter-spacing-0: 0px;
-    --line-height-22: 22px;
-    --font-style: normal;
-    --font-size-20: 20px;
-    --line-height-120: 120%;
-    --font-weight-500: 500;
-    --font-size-18: 18px;
-    --font-size-14: 14px;
-    --line-height-129: 129px;
-    --font-size-88: 88px;
-    --line-height-93: 93%;
-    --font-size-24: 24px;
-    --line-height-117: 117%;
-    --margin-l: 60px;
-    --font-size-72: 72px;
-    --line-height-114: 114%;
-    --line-height-122: 122%;
-    --font-size-12: 12px;
-    --line-height-130: 130%;
-    --font-size-48: 48px;
-    --line-height-113: 113%;
-    --line-height-138: 138%;
-    --line-height-125: 125%;
-}
+@use 'header';
+@use 'nav';
+@use 'media';
+@use 'footer';
+@use 'hero-slider';
+@use 'spotlight';
+@use 'hobbies';
+@use 'afisha';
+@use 'parks';
+@use 'news';
+@use 'articles';
+@use 'about';
+@use 'modal';
+@use 'partners';
+@use 'variables' as *;
 
 @font-face {
-    font-family: "PT Root UI";
+    font-family: $font-family;
     src: local("PT Root UI");
 }
 

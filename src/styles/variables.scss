@@ -1,0 +1,44 @@
+$color-text: #000;
+$color-text-inverse: #fff;
+$color-primary: #0d483b;
+$color-primary-light: rgba(13, 72, 59, 0.8);
+$color-overlay-30: rgba(0, 14, 51, 0.3);
+$color-overlay-15: rgba(0, 14, 51, 0.15);
+$color-gray: #e1eae8;
+$color-cappuccino: #f6d393;
+$color-blue-sky: #c0f8ff;
+$color-purple-flowers: #9747ff;
+$color-summer-orange: #ff871c;
+$color-yellow-leaves: #ffc507;
+$color-summer-grass: #008e1c;
+$color-blue: #1eb9cb;
+$color-purple: #b18ff8;
+
+$font-family: "PT Root UI", Helvetica;
+$font-style: normal;
+
+:root {
+    --font-weight-500: 500;
+    --font-size-12: 12px;
+    --font-size-14: 14px;
+    --font-size-16: 16px;
+    --font-size-18: 18px;
+    --font-size-20: 20px;
+    --font-size-24: 24px;
+    --font-size-48: 48px;
+    --font-size-72: 72px;
+    --font-size-88: 88px;
+    --line-height-93: 93%;
+    --line-height-113: 113%;
+    --line-height-114: 114%;
+    --line-height-117: 117%;
+    --line-height-120: 120%;
+    --line-height-122: 122%;
+    --line-height-125: 125%;
+    --line-height-129: 129%;
+    --line-height-130: 130%;
+    --line-height-138: 138%;
+    --letter-spacing-0: 0px;
+
+    --margin-l: 60px;
+}
