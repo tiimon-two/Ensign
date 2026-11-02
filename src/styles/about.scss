@@ -7,13 +7,11 @@
         flex-direction: column;
     }
 
-    // ---------- Верхняя часть ----------
     &__top {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     }
 
-    // ---------- Левая колонка ----------
     &__info {
         padding: 120px 92px 120px 0;
     }
@@ -81,13 +79,10 @@
         }
     }
 
-    // ---------- Правая колонка ----------
     &__contacts {
         position: relative;
         padding: 120px 60px;
         overflow: hidden;
-        border-radius: 24px;
-        background-color: var(--dark-green);
         background-image:
             url('/src/assets/about-pattern.svg'),
             url('/src/assets/about-background.svg');
@@ -97,6 +92,7 @@
     }
 
     &__contacts-title {
+        max-width: 400px;
         margin: 0 0 114px;
         font-family: var(--font-family);
         font-weight: var(--font-weight-500);
@@ -107,8 +103,8 @@
 
     &__contacts-list {
         display: flex;
-        flex-direction: column;
-        gap: 24px;
+        flex-wrap: wrap;
+        gap: 12px;
         margin: 0;
         padding: 0;
         list-style: none;
@@ -118,18 +114,23 @@
         display: inline-flex;
         align-items: center;
         gap: 12px;
+        padding: 13px 20px 14px;
         color: #fff;
         text-decoration: none;
+        backdrop-filter: blur(24px);
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        transition: background-color 0.2s ease;
 
-        &:hover .about__contact-label {
-            text-decoration: underline;
-            text-underline-offset: 4px;
+        &:hover,
+        &:focus-visible
+         {
+            background-color: var(--dark-green);
         }
 
         &:focus-visible {
             outline: 2px solid #fff;
             outline-offset: 3px;
-            border-radius: 4px;
         }
     }
 
