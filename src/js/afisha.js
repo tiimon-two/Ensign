@@ -1,3 +1,12 @@
+import afisha1 from '../assets/afisha-1.jpg';
+import afisha2 from '../assets/afisha-2.jpg';
+import afisha3 from '../assets/afisha-3.jpg';
+import afisha4 from '../assets/afisha-4.jpg';
+import afisha5 from '../assets/afisha-5.jpg';
+import afisha6 from '../assets/afisha-6.jpg';
+import afisha7 from '../assets/afisha-7.jpg';
+import afisha8 from '../assets/afisha-8.jpg';
+
 const $ = window.jQuery;
 
 export function initAfisha() {
@@ -17,7 +26,7 @@ export function initAfisha() {
             dateLabel: '12-13 октября, 12:00',
             free: true,
             tags: ['Экскурсии', 'Выставки', 'Мастер-классы'],
-            image: '/src/assets/afisha-1.jpg'
+            image: afisha1
         },
         {
             id: 2,
@@ -30,7 +39,7 @@ export function initAfisha() {
             dateLabel: '17 октября, 12:00',
             free: false,
             tags: ['Экскурсии', 'Выставки', 'Мастер-классы'],
-            image: '/src/assets/afisha-2.jpg'
+            image: afisha2
         },
         {
             id: 3,
@@ -43,7 +52,7 @@ export function initAfisha() {
             dateLabel: '18 октября, 10:00',
             free: false,
             tags: ['Спорт'],
-            image: '/src/assets/afisha-3.jpg'
+            image: afisha3
         },
         {
             id: 4,
@@ -56,7 +65,7 @@ export function initAfisha() {
             dateLabel: '19 сентября, 12:00',
             free: false,
             tags: ['Фестивали', 'Концерты', 'Детям'],
-            image: '/src/assets/afisha-4.jpg'
+            image: afisha4
         },
         {
             id: 5,
@@ -69,7 +78,7 @@ export function initAfisha() {
             dateLabel: '23 октября, 17:00',
             free: true,
             tags: ['Концерты', 'Вечеринки'],
-            image: '/src/assets/afisha-5.jpg'
+            image: afisha5
         },
         {
             id: 6,
@@ -82,7 +91,7 @@ export function initAfisha() {
             dateLabel: '23 октября, 12:00',
             free: false,
             tags: ['Мастер-классы'],
-            image: '/src/assets/afisha-6.jpg'
+            image: afisha6
         },
         {
             id: 7,
@@ -95,7 +104,7 @@ export function initAfisha() {
             dateLabel: '24 октября, 11:00',
             free: true,
             tags: ['Квест', 'Детям'],
-            image: '/src/assets/afisha-7.jpg'
+            image: afisha7
         },
         {
             id: 8,
@@ -108,7 +117,7 @@ export function initAfisha() {
             dateLabel: '24 октября, 12:00',
             free: false,
             tags: ['Спорт', 'Благотворительная акция'],
-            image: '/src/assets/afisha-8.jpg'
+            image: afisha8
         }
     ];
 
