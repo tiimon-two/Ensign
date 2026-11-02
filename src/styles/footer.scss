@@ -260,4 +260,16 @@
             color: var(--basic-light);
         }
     }
+
+    &__large-brand {
+    display: flex;
+    justify-content: flex-start;   // по макету; если по центру — center
+    padding-top: 24px;             // уточните по макету
+    }
+
+    &__large-brand-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
 }
