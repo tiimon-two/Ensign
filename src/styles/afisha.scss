@@ -45,10 +45,15 @@
             background-color: $color-white;
             font: inherit;
             cursor: pointer;
-
+            
             .select2-selection__rendered {
                 padding: 0;
                 color: $color-text;
+                transition: color 0.2s ease;
+
+                &:hover {
+                    color: $color-primary;
+                }
             }
 
             .select2-selection__arrow {
@@ -71,6 +76,11 @@
         background-color: $color-white;
         border-radius: 16px;
         text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $color-primary;
+        }
 
         &::after {
             position: absolute;
@@ -319,6 +329,11 @@
         font-size: var(--font-size-18);
         line-height: var(--line-height-122);
         cursor: pointer;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $color-primary;
+        }
 
         &::after {
             position: absolute;
