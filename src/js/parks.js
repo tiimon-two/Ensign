@@ -1,3 +1,5 @@
+import pin from '../assets/pin.svg'
+
 const $ = window.jQuery;
 
 export function initParks() {
@@ -128,7 +130,7 @@ export function initParks() {
                 },
                 {
                     iconLayout: 'default#image',
-                    iconImageHref: '/src/assets/pin.svg',
+                    iconImageHref: pin,
                     iconImageSize: [48, 48],
                     iconImageOffset: [-24, -48]
                 }
