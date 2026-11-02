@@ -263,8 +263,9 @@
 
     &__large-brand {
     display: flex;
-    justify-content: flex-start;   // по макету; если по центру — center
-    padding-top: 24px;             // уточните по макету
+
+    justify-content: flex-start;
+    padding-top: 24px;
     }
 
     &__large-brand-image {
