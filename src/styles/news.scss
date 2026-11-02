@@ -27,21 +27,36 @@
     }
 
     &__all-link {
+        position: relative;
+        padding-right: 54px;
         font-family: var(--font-family);
         font-weight: var(--font-weight-500);
         font-size: var(--font-size-18);
         line-height: var(--line-height-122);
         color: #000;
         text-decoration: none;
+        transition: color 0.2s ease;
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: -8px;
+            right: 22px;
+            width: 24px;
+            height: 24px;
+            transform: scale(-1);
+            background-image: url('../assets/arrow-black.svg');
+            background-repeat: no-repeat;
+        }
 
         &:hover {
-            text-decoration: underline;
-            text-underline-offset: 4px;
+            color: var(--dark-green);
         }
 
         &:focus-visible {
             outline: 2px solid var(--basicinteractive);
             outline-offset: 3px;
+            color: var(--dark-green);
         }
     }
 
